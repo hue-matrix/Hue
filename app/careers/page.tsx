@@ -11,20 +11,19 @@ export default function CareersPage() {
         <main className="min-h-screen bg-[#efebe5] text-black selection:bg-black selection:text-white">
             <Navbar />
 
-            <div className="pt-32 pb-20 container mx-auto px-4 md:px-6">
+            <div className="pt-32 pb-20 w-full max-w-[1100px] mx-auto px-4 md:px-6">
 
                 {/* Header */}
-                {/* Header */}
-                <div className="flex flex-col items-start text-left space-y-6 mb-20 md:mb-24">
+                <div className="flex flex-col items-start text-left space-y-6 mb-12">
                     <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
                         Work with us
                     </div>
-                    <div className="relative">
-                        <h1 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter leading-tight relative z-10">
+                    <div className="relative w-full">
+                        <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10">
                             Work with us
                         </h1>
                     </div>
-                    <p className="text-xl md:text-2xl text-black/60 font-sans max-w-2xl leading-relaxed">
+                    <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">
                         We’re always open to working with people and partners who value quality, clarity, and excellent work.
                     </p>
                 </div>
@@ -34,43 +33,49 @@ export default function CareersPage() {
 
                     {/* Careers Form */}
                     <FormContainer title="Join Our Team" delay={0}>
-                        <form className="space-y-8">
-                            <FormInput label="Full Name*" name="fullName" type="text" placeholder="Full Name*" required />
-                            <FormInput label="Email Address*" name="email" type="email" placeholder="Email Address*" required />
-                            <FormInput label="Contact Number*" name="phone" type="tel" placeholder="Contact Number*" required />
-                            <FormInput label="Current Location" name="location" type="text" placeholder="Current Location" />
-                            <FormInput label="Role You’re Applying For" name="role" type="text" placeholder="Role You’re Applying For" />
-                            <FormInput label="Years of Experience" name="experience" type="number" placeholder="Years of Experience" />
+                        <form className="space-y-8 flex flex-col h-full">
+                            <div className="space-y-8 flex-grow">
+                                <FormInput label="Full Name*" name="fullName" type="text" placeholder="Full Name*" required />
+                                <FormInput label="Email Address*" name="email" type="email" placeholder="Email Address*" required />
+                                <FormInput label="Contact Number*" name="phone" type="tel" placeholder="Contact Number*" required />
+                                <FormInput label="Current Location" name="location" type="text" placeholder="Current Location" />
+                                <FormInput label="Role You’re Applying For" name="role" type="text" placeholder="Role You’re Applying For" />
+                                <FormInput label="Years of Experience" name="experience" type="number" placeholder="Years of Experience" />
 
-                            {/* Resume Upload */}
-                            <div className="space-y-2">
-                                <label className="sr-only">Upload Resume</label>
-                                <div className="border border-dashed border-black/20 rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors group">
-                                    <Upload size={24} className="text-black/40 group-hover:text-black transition-colors" />
-                                    <span className="text-sm text-black/60">Click to upload or drag and drop Resume</span>
-                                    <input type="file" className="hidden" accept=".pdf,.doc,.docx" />
+                                {/* Resume Upload */}
+                                <div className="space-y-2">
+                                    <label className="sr-only">Upload Resume</label>
+                                    <div className="border border-dashed border-black/20 rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors group">
+                                        <Upload size={24} className="text-black/40 group-hover:text-black transition-colors" />
+                                        <span className="text-sm text-black/60">Click to upload or drag and drop Resume</span>
+                                        <input type="file" className="hidden" accept=".pdf,.doc,.docx" />
+                                    </div>
                                 </div>
+
+                                <FormInput label="Portfolio Link" name="portfolio" type="url" placeholder="Portfolio Link" />
                             </div>
 
-                            <FormInput label="Portfolio Link" name="portfolio" type="url" placeholder="Portfolio Link" />
-
-                            <SubmitButton label="Submit Application" />
+                            <div className="mt-8">
+                                <SubmitButton label="Submit Application" />
+                            </div>
                         </form>
                     </FormContainer>
 
                     {/* Vendors Form */}
                     <FormContainer title="Partner With Us" delay={0.2}>
                         <div className="h-full flex flex-col">
-                            <form className="space-y-8 flex-grow">
-                                <FormInput label="Company / Individual Name*" name="companyName" type="text" placeholder="Company / Individual Name*" required />
-                                <FormInput label="Contact Person Name*" name="contactPerson" type="text" placeholder="Contact Person Name*" required />
-                                <FormInput label="Email Address*" name="vendorEmail" type="email" placeholder="Email Address*" required />
-                                <FormInput label="Contact Number*" name="vendorPhone" type="tel" placeholder="Contact Number*" required />
-                                <FormInput label="Location / City" name="vendorLocation" type="text" placeholder="Location / City" />
-                                <FormInput label="Type of Service" name="serviceType" type="text" placeholder="Type of Service" />
-                                <FormInput label="Previous Work / Website / Portfolio Link" name="vendorPortfolio" type="url" placeholder="Previous Work / Website / Portfolio Link" />
+                            <form className="space-y-8 flex flex-col h-full">
+                                <div className="space-y-8 flex-grow">
+                                    <FormInput label="Company / Individual Name*" name="companyName" type="text" placeholder="Company / Individual Name*" required />
+                                    <FormInput label="Contact Person Name*" name="contactPerson" type="text" placeholder="Contact Person Name*" required />
+                                    <FormInput label="Email Address*" name="vendorEmail" type="email" placeholder="Email Address*" required />
+                                    <FormInput label="Contact Number*" name="vendorPhone" type="tel" placeholder="Contact Number*" required />
+                                    <FormInput label="Location / City" name="vendorLocation" type="text" placeholder="Location / City" />
+                                    <FormInput label="Type of Service" name="serviceType" type="text" placeholder="Type of Service" />
+                                    <FormInput label="Previous Work / Website / Portfolio Link" name="vendorPortfolio" type="url" placeholder="Previous Work / Website / Portfolio Link" />
+                                </div>
 
-                                <div className="pt-4">
+                                <div className="mt-8">
                                     <SubmitButton label="Submit Details" />
                                 </div>
                             </form>
@@ -92,10 +97,12 @@ function FormContainer({ title, children, delay }: { title: string, children: Re
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay }}
-            className="bg-[#f7f2ea] rounded-[32px] p-8 md:p-12 shadow-sm"
+            className="bg-[#f7f2ea] rounded-[32px] p-8 md:p-12 shadow-sm flex flex-col h-full"
         >
-            <h2 className="text-3xl font-sans font-bold mb-8 tracking-tight">{title}</h2>
-            {children}
+            <h2 className="text-3xl font-sans font-bold mb-8 tracking-tight shrink-0">{title}</h2>
+            <div className="flex-grow flex flex-col">
+                {children}
+            </div>
         </motion.div>
     )
 }

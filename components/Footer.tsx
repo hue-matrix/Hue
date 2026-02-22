@@ -5,8 +5,8 @@ import { Twitter, Instagram, Linkedin, X } from "lucide-react"
 
 export const Footer = () => {
     return (
-        <footer className="bg-[#F3F2ED] text-black py-20 px-6 md:px-12 border-t border-black/5">
-            <div className="container mx-auto">
+        <footer className="bg-[#efebe5] text-black py-20 px-6 md:px-12 border-t border-black/5">
+            <div className="w-full max-w-[1200px] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-8">
 
                     {/* Left Column: Branding */}

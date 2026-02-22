@@ -96,7 +96,7 @@ export const Services = () => {
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
                 <div className="bg-[#E5E4DE] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
-                    Services
+                    What we do
                 </div>
             </div>
 
@@ -108,14 +108,14 @@ export const Services = () => {
                     </h2>
                 </Reveal>
                 <div className="text-center mt-8">
-                    <p className="text-foreground/60 text-lg md:text-xl font-sans leading-relaxed max-w-2xl mx-auto">
+                    <p className="font-sans font-medium text-[18px] leading-[36px] text-[#918f8b] max-w-2xl mx-auto">
                         Our services are designed to be flexible, allowing you to engage us for design, execution, décor, or complete end-to-end solutions.
                     </p>
                 </div>
             </div>
 
             {/* Grid Layout */}
-            <div className="container px-4 md:px-6 mx-auto">
+            <div className="w-full px-4 md:px-6 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
                     {services.map((service, index) => {
                         // Desktop Layout Logic:

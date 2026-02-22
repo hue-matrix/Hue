@@ -45,15 +45,15 @@ export const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null)
 
     return (
-        <section className="py-24 bg-[#F3F2ED] relative pb-32">
+        <section className="py-8 md:py-12 relative">
             {/* Container */}
-            <div className="container px-4 md:px-6 mx-auto">
+            <div className="w-full px-4 md:px-6 mx-auto">
 
                 {/* Main Card - White for distinct 'box' look */}
-                <div className="relative bg-[#f7f2ea] rounded-[3rem] p-8 md:p-12 lg:p-16 overflow-hidden max-w-4xl mx-auto shadow-sm">
+                <div className="relative bg-[#f7f2ea] rounded-[2.5rem] p-6 md:p-8 lg:p-12 max-w-3xl mx-auto shadow-sm">
 
                     {/* Header Row: Badge + Dot */}
-                    <div className="flex justify-between items-start mb-12">
+                    <div className="flex justify-between items-start mb-8">
                         {/* Badge */}
                         <div className="bg-[#F3F2ED] px-5 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
                             Questions
@@ -61,10 +61,10 @@ export const FAQ = () => {
                     </div>
 
                     {/* Heading - Left Aligned */}
-                    <div className="text-left mb-12">
+                    <div className="text-left mb-8">
                         <Reveal width="100%">
                             <div className="flex flex-col items-start gap-4">
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground font-sans font-bold tracking-tight leading-[1.1]">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground font-sans font-bold tracking-tight leading-[1.1]">
                                     Frequently <br /> Asked <span className="font-serif italic font-normal">Questions</span>
                                 </h2>
                             </div>
@@ -72,70 +72,69 @@ export const FAQ = () => {
                     </div>
 
                     {/* Accordion List */}
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-3">
                         {faqs.map((faq, index) => (
-                            <Magnetic key={index}>
-                                <motion.div
-                                    initial={false}
-                                    className={`rounded-[2rem] px-8 py-6 cursor-pointer transition-colors duration-300 ${openIndex === index
-                                        ? "bg-[#E5E4DE]" // Active State
-                                        : "bg-[#ede9e1]" // Inactive State (Darker beige)
-                                        }`}
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    data-cursor="hover"
-                                    whileHover={{ scale: 1.01 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                                >
-                                    <div className="flex justify-between items-center gap-4">
-                                        <h3 className="text-lg md:text-xl font-medium text-foreground tracking-tight">
-                                            {faq.question}
-                                        </h3>
-                                        {/* Icon Wrapper: Black circle */}
-                                        <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0">
-                                            <AnimatePresence mode="wait" initial={false}>
-                                                {openIndex === index ? (
-                                                    <motion.div
-                                                        key="minus"
-                                                        initial={{ rotate: -90, opacity: 0 }}
-                                                        animate={{ rotate: 0, opacity: 1 }}
-                                                        exit={{ rotate: 90, opacity: 0 }}
-                                                        transition={{ duration: 0.2 }}
-                                                    >
-                                                        {/* Small X or Minus */}
-                                                        <Plus className="w-5 h-5 rotate-45" />
-                                                    </motion.div>
-                                                ) : (
-                                                    <motion.div
-                                                        key="plus"
-                                                        initial={{ rotate: 90, opacity: 0 }}
-                                                        animate={{ rotate: 0, opacity: 1 }}
-                                                        exit={{ rotate: -90, opacity: 0 }}
-                                                        transition={{ duration: 0.2 }}
-                                                    >
-                                                        <Plus className="w-5 h-5" />
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
-                                        </div>
+                            <motion.div
+                                key={index}
+                                initial={false}
+                                className={`rounded-3xl px-6 py-4 cursor-pointer transition-colors duration-300 ${openIndex === index
+                                    ? "bg-[#E5E4DE]" // Active State
+                                    : "bg-[#ede9e1]" // Inactive State (Darker beige)
+                                    }`}
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                data-cursor="hover"
+                                whileHover={{ scale: 1.01 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                            >
+                                <div className="flex justify-between items-center gap-4">
+                                    <h3 className="text-base md:text-lg font-medium text-foreground tracking-tight">
+                                        {faq.question}
+                                    </h3>
+                                    {/* Icon Wrapper: Black circle */}
+                                    <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0">
+                                        <AnimatePresence mode="wait" initial={false}>
+                                            {openIndex === index ? (
+                                                <motion.div
+                                                    key="minus"
+                                                    initial={{ rotate: -90, opacity: 0 }}
+                                                    animate={{ rotate: 0, opacity: 1 }}
+                                                    exit={{ rotate: 90, opacity: 0 }}
+                                                    transition={{ duration: 0.2 }}
+                                                >
+                                                    {/* Small X or Minus */}
+                                                    <Plus className="w-5 h-5 rotate-45" />
+                                                </motion.div>
+                                            ) : (
+                                                <motion.div
+                                                    key="plus"
+                                                    initial={{ rotate: 90, opacity: 0 }}
+                                                    animate={{ rotate: 0, opacity: 1 }}
+                                                    exit={{ rotate: -90, opacity: 0 }}
+                                                    transition={{ duration: 0.2 }}
+                                                >
+                                                    <Plus className="w-5 h-5" />
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
                                     </div>
+                                </div>
 
-                                    <AnimatePresence initial={false}>
-                                        {openIndex === index && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                                className="overflow-hidden"
-                                            >
-                                                <p className="pt-4 text-foreground/70 leading-relaxed text-base md:text-lg font-sans max-w-2xl">
-                                                    {faq.answer}
-                                                </p>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </motion.div>
-                            </Magnetic>
+                                <AnimatePresence initial={false}>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <p className="pt-3 text-foreground/70 leading-relaxed text-sm md:text-base font-sans max-w-2xl">
+                                                {faq.answer}
+                                            </p>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

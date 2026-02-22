@@ -6,21 +6,21 @@ import { Star } from "lucide-react"
 
 export const About = () => {
     return (
-        <section className="py-24 bg-[#efebe5] relative overflow-hidden">
+        <section className="max-w-[1100px] mx-auto py-24 bg-[#efebe5] relative overflow-hidden">
 
-            <div className="container px-4 md:px-6 mx-auto mb-10">
+            <div className="container px-4 md:px-6 mx-auto mb-12">
                 <div className="flex flex-col items-start text-left space-y-6">
                     <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
                         About us
                     </div>
                     <div className="relative">
                         <Reveal width="100%">
-                            <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter leading-tight relative z-10">
+                            <h2 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full">
                                 Who we are
                             </h2>
                         </Reveal>
                     </div>
-                    
+
                 </div>
             </div>
 

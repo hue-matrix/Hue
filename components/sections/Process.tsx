@@ -63,12 +63,12 @@ export const Process = () => {
     })
 
     return (
-        <section ref={containerRef} className="py-24 bg-[#efebe5] relative overflow-hidden">
+        <section ref={containerRef} className="py-24 bg-[#efebe5] relative">
 
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
                 <div className="bg-[#E5E4DE] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
-                    How we work
+                    How it works
                 </div>
             </div>
 
@@ -82,7 +82,7 @@ export const Process = () => {
             </div>
 
             {/* Desktop Snake Layout Container (Hidden on Mobile/Tablet) */}
-            <div className="hidden lg:block container mx-auto relative min-h-[600px] max-w-7xl">
+            <div className="hidden lg:block w-full mx-auto px-4 md:px-6 relative min-h-[600px]">
 
                 {/* SVG Path Layer */}
                 <div className="absolute inset-0 pointer-events-none z-0 top-[2.5rem]">
@@ -133,7 +133,7 @@ export const Process = () => {
             </div>
 
             {/* Mobile/Tablet Vertical Layout (Visible on smaller screens) */}
-            <div className="block lg:hidden container px-4 md:px-6 mx-auto">
+            <div className="block lg:hidden w-full px-4 md:px-6 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                     {/* Vertical Line Removed */}
 
@@ -170,13 +170,11 @@ export const Process = () => {
 const ProcessCard = ({ step, index }: { step: any, index: number }) => {
     return (
         <div className="flex flex-col items-center text-center gap-6 group">
-            <Magnetic>
-                <div
-                    className="w-20 h-20 bg-[#f7f2ea] rounded-2xl flex items-center justify-center shadow-sm relative z-10 cursor-pointer hover:shadow-md transition-all duration-300"
-                >
-                    {step.icon}
-                </div>
-            </Magnetic>
+            <div
+                className="w-20 h-20 bg-[#f7f2ea] rounded-2xl flex items-center justify-center shadow-sm relative z-10 cursor-pointer group-hover:scale-110 transition-transform duration-300"
+            >
+                {step.icon}
+            </div>
 
             <motion.div
                 initial={{ opacity: 0, y: 10 }}

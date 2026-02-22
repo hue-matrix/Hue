@@ -51,20 +51,19 @@ export default function InsightsPage() {
         <main className="min-h-screen bg-[#efebe5] text-black selection:bg-black selection:text-white">
             <Navbar />
 
-            <div className="pt-32 pb-20 container mx-auto px-4 md:px-6">
+            <div className="pt-32 pb-20 w-full max-w-[1100px] mx-auto px-4 md:px-6">
 
                 {/* Header */}
-                <div className="flex flex-col items-start text-left space-y-6 mb-20 md:mb-32">
-                    <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
+                <div className="flex flex-col items-start text-left space-y-6 mb-12">
+                    <div className="bg-[#f7f2ea] px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
                         Insights
                     </div>
-                    <div className="relative">
-                        <h1 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter leading-tight relative z-10">
+                    <div className="relative w-full">
+                        <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full mb-6">
                             Latest insights
                         </h1>
-                        
                     </div>
-                    <p className="text-xl md:text-2xl text-black/60 font-sans max-w-2xl leading-relaxed">
+                    <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">
                         Actionable tips, design trends, and expert perspectives to help you create a space that feels personal and well-considered.
                     </p>
                 </div>
@@ -84,63 +83,40 @@ export default function InsightsPage() {
 }
 
 function InsightCard({ insight, index }: { insight: { title: string, excerpt: string, color: string, image: string }, index: number }) {
-    const cardRef = useRef<HTMLDivElement>(null)
-    const [position, setPosition] = useState({ x: 0, y: 0 })
-
-    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-        if (!cardRef.current) return
-        const { left, top, width, height } = cardRef.current.getBoundingClientRect()
-        const x = (e.clientX - left - width / 2) * 0.1 // Magnetic strength
-        const y = (e.clientY - top - height / 2) * 0.1
-        setPosition({ x, y })
-    }
-
-    const handleMouseLeave = () => {
-        setPosition({ x: 0, y: 0 })
-    }
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.1 } }}
             viewport={{ once: true, margin: "-10%" }}
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            animate={{ x: position.x, y: position.y }}
-            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-            className="group relative cursor-pointer"
+            className="group relative cursor-pointer bg-[#f7f2ea] rounded-[32px] overflow-hidden flex flex-col h-full"
             data-cursor="hover" // For custom cursor scaling
         >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col flex-grow">
                 {/* Image Container */}
-                <div
-                    className="relative aspect-[4/3] w-full overflow-hidden rounded-[32px] md:rounded-[40px] bg-gray-200"
-                >
+                <div className="relative aspect-[4/3] w-full overflow-hidden shrink-0">
                     <Image
                         src={insight.image}
                         alt={insight.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-
-                    {/* Overlay on Hover */}
-                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {/* Arrow Indicator */}
-                    <div className="absolute bottom-6 right-6 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 origin-center z-10">
-                        <ArrowUpRight size={20} />
-                    </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-2">
-                    <h3 className="text-3xl font-sans font-bold leading-tight group-hover:underline decoration-1 underline-offset-4 transition-all">
-                        {insight.title}
-                    </h3>
-                    <p className="text-lg text-black/60 leading-relaxed line-clamp-2">
-                        {insight.excerpt}
-                    </p>
+                <div className="p-6 md:p-8 flex flex-col justify-between flex-grow relative">
+                    <div className="space-y-3">
+                        <h3 className="text-[20px] font-sans font-medium leading-[30px] text-black">
+                            {insight.title}
+                        </h3>
+                        <p className="text-[16px] text-black/50 font-medium leading-[24px]">
+                            {insight.excerpt}
+                        </p>
+                    </div>
+
+                    {/* Arrow Indicator at bottom right */}
+                    <div className="absolute bottom-6 right-6 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
+                        <ArrowUpRight strokeWidth={2} size={20} />
+                    </div>
                 </div>
             </div>
         </motion.div>

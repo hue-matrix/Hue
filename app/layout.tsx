@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased bg-[#F3F2ED] text-[#121212] overflow-x-hidden`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased bg-[#efebe5] text-[#121212] overflow-x-hidden`}>
         <CustomCursor />
         {children}
       </body>

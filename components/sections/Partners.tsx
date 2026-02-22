@@ -16,11 +16,11 @@ const partners = [
 
 export const Partners = () => {
     return (
-        <section className="py-20 bg-background overflow-hidden px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+        <section className="py-20 bg-background overflow-hidden flex flex-col md:flex-row items-center gap-12 mx-auto px-6 md:px-12">
             {/* Left Static Text */}
             <div className="w-full md:w-1/4 shrink-0">
                 <Reveal width="100%">
-                    <p className="text-sm font-medium text-foreground/40 uppercase tracking-widest leading-relaxed font-sans">
+                    <p className="font-sans font-medium text-[14px] leading-[21px] text-[#918f8b]">
                         Brands we've helped <br className="hidden md:block" /> grow on social.
                     </p>
                 </Reveal>
@@ -38,7 +38,7 @@ export const Partners = () => {
                         x: {
                             repeat: Infinity,
                             repeatType: "loop",
-                            duration: 30,
+                            duration: 50,
                             ease: "linear",
                         },
                     }}
@@ -46,7 +46,7 @@ export const Partners = () => {
                 >
                     {/* Duplicating 4 times to ensure enough width for large screens and seamless loop at -50% */}
                     {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
-                        <div key={index} className="relative w-32 h-16 md:w-40 md:h-20 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center shrink-0">
+                        <div key={index} className="relative w-24 h-12 md:w-32 md:h-16 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center shrink-0">
                             {/* Using standard img for simplicity if Next Image is tricky with unknown sizing, 
                                 but Next Image is safer. Using fill + object-contain. 
                             */}

@@ -9,17 +9,17 @@ export default function WorkPage() {
         <main className="min-h-screen selection:bg-black selection:text-white bg-[#efebe5]">
 
             <Navbar />
-            <div className="pt-32 pb-20 container mx-auto px-4 md:px-6">
-                <div className="flex flex-col items-start text-left space-y-6 mb-12 md:mb-20">
+            <div className="pt-32 pb-20 w-full max-w-[1100px] mx-auto px-4 md:px-6">
+                <div className="flex flex-col items-start text-left space-y-6 mb-12">
                     <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
                         Our Work
                     </div>
-                    <div className="relative">
-                        <h1 className="text-5xl md:text-7xl font-sans font-bold tracking-tighter leading-tight relative z-10">
+                    <div className="relative w-full">
+                        <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full mb-6">
                             Selected projects
                         </h1>
                     </div>
-                    <p className="text-xl md:text-2xl text-black/60 font-sans max-w-2xl leading-relaxed">
+                    <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">
                         A showcase of our finest projects and design excellence, tailored to reflect individual personalities.
                     </p>
                 </div>

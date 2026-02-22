@@ -14,7 +14,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'Hue - Premium Social Media Agency',
+  title: 'Hue Matrix - Premium Social Media Agency',
   description: 'Short form done right. Turning content chaos into consistent growth.',
 }
 

@@ -18,7 +18,7 @@ export const Footer = () => {
                                     <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
                                 </svg>
                             </div>
-                            <span className="font-sans font-bold text-xl tracking-tight">hue</span>
+                            <span className="font-sans font-bold text-xl tracking-tight">hue matrix</span>
                         </a>
 
                         {/* Tagline */}

@@ -118,7 +118,7 @@ export const HeroSlideshow = () => {
                     <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md overflow-hidden border border-white/30">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="User" className="w-full h-full object-cover" />
                     </div>
-                    <span className="text-white text-sm font-medium drop-shadow-md">hue_interiors</span>
+                    <span className="text-white text-sm font-medium drop-shadow-md">hue_matrix</span>
                     <span className="text-white/60 text-sm drop-shadow-md">2h</span>
                 </div>
             </div>

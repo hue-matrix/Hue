@@ -55,7 +55,7 @@ export const Navbar = () => {
                         </div>
 
                         <a href="/contact" data-cursor="hover">
-                            <Button className="rounded-full text-sm md:text-lg px-6 md:px-8 py-4 md:py-6 bg-black text-white hover:bg-black/80 transition-transform duration-300 transform hover:scale-105 whitespace-nowrap">
+                            <Button className="rounded-full text-[13px] md:text-base px-8 py-2 bg-black text-white hover:bg-black/80 transition-transform duration-300 transform hover:scale-105 whitespace-nowrap">
                                 Contact Us
                             </Button>
                         </a>
@@ -89,7 +89,7 @@ export const Navbar = () => {
                         </div>
 
                         <a href="/contact" onClick={() => setIsOpen(false)}>
-                            <Button className="rounded-full text-sm md:text-lg px-6 md:px-8 py-4 md:py-6 bg-black text-white hover:bg-black/80 font-medium transition-all duration-300 mt-4">
+                            <Button className="rounded-full text-[13px] md:text-[15px] px-6 md:px-8 py-4 md:py-6 bg-black text-white hover:bg-black/80 font-medium transition-all duration-300 mt-4">
                                 Contact Us
                             </Button>
                         </a>

@@ -42,7 +42,6 @@ export const Navbar = () => {
                     <div className="hidden md:flex gap-8 items-center">
                         <div className="flex gap-6 text-sm font-medium text-foreground/80">
                             {[
-                                { name: "Home", href: "/" },
                                 { name: "About", href: "/about" },
                                 { name: "Services", href: "/services" },
                                 { name: "Our Work", href: "/work" },
@@ -56,7 +55,7 @@ export const Navbar = () => {
                         </div>
 
                         <a href="/contact" data-cursor="hover">
-                            <Button className="rounded-full bg-black text-white hover:bg-black/80 px-5 py-2 text-sm font-medium transition-transform hover:scale-105 duration-300">
+                            <Button className="rounded-full text-sm md:text-lg px-6 md:px-8 py-4 md:py-6 bg-black text-white hover:bg-black/80 transition-transform duration-300 transform hover:scale-105 whitespace-nowrap">
                                 Contact Us
                             </Button>
                         </a>
@@ -82,7 +81,6 @@ export const Navbar = () => {
                         className="fixed inset-0 bg-[#efebe5] z-40 flex flex-col items-center justify-center gap-10 md:hidden"
                     >
                         <div className="flex flex-col items-center gap-8">
-                            <a href="/" onClick={() => setIsOpen(false)} className="text-2xl font-serif font-medium text-black hover:text-black/60 transition-colors">Home</a>
                             <a href="/about" onClick={() => setIsOpen(false)} className="text-2xl font-serif font-medium text-black hover:text-black/60 transition-colors">About</a>
                             <a href="/services" onClick={() => setIsOpen(false)} className="text-2xl font-serif font-medium text-black hover:text-black/60 transition-colors">Services</a>
                             <a href="/work" onClick={() => setIsOpen(false)} className="text-2xl font-serif font-medium text-black hover:text-black/60 transition-colors">Our Work</a>
@@ -91,7 +89,7 @@ export const Navbar = () => {
                         </div>
 
                         <a href="/contact" onClick={() => setIsOpen(false)}>
-                            <Button className="rounded-full bg-black text-white hover:bg-black/80 px-10 py-6 text-xl font-medium transition-all duration-300 mt-4">
+                            <Button className="rounded-full text-sm md:text-lg px-6 md:px-8 py-4 md:py-6 bg-black text-white hover:bg-black/80 font-medium transition-all duration-300 mt-4">
                                 Contact Us
                             </Button>
                         </a>

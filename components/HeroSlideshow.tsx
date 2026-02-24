@@ -59,8 +59,8 @@ export const HeroSlideshow = () => {
     }
 
     return (
-        // Adjusted height/width for story-like aspect ratio (approx 9:16) with a card-like border
-        <div className="relative w-full max-w-[340px] md:max-w-[400px] h-[580px] md:h-[680px] bg-white p-2 rounded-[2.5rem] overflow-hidden group shadow-2xl mx-auto lg:ml-auto lg:mr-0 flex items-center justify-center">
+        // Adjusted height/width to be smaller as requested
+        <div className="relative w-full max-w-[280px] md:max-w-[340px] lg:max-w-[380px] h-[500px] md:h-[600px] bg-white p-2 rounded-[2.5rem] overflow-hidden group shadow-2xl mx-auto lg:ml-auto lg:mr-0 flex items-center justify-center">
             {/* Inner rounded wrapper for the actual image/video content */}
             <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
                 {/* Progress Bars */}

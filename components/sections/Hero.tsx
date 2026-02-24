@@ -12,11 +12,11 @@ export const Hero = () => {
             <div className="flex flex-col items-start justify-center z-10 pt-8 lg:pt-0 ">
                 <style dangerouslySetInnerHTML={{
                     __html: `
-                    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Instrument+Serif:ital@0;1&display=swap');
+                    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital@0;1&display=swap');
                 ` }} />
                 <Reveal>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-medium tracking-tighter leading-[1.05] mb-6 max-w-[15ch] lg:max-w-none" style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif', fontWeight: 500, color: 'rgb(0, 0, 0)' }}>
-                        Creating spaces you <br className="hidden lg:block" /> truly <span className="italic font-normal" style={{ fontFamily: "'Instrument Serif', 'DM Serif Text', serif" }}>belong</span> in.
+                        Creating spaces you <br className="hidden lg:block" /> truly <span className="italic font-normal" style={{ fontFamily: "'Source Serif 4', serif" }}>belong</span> in.
                     </h1>
                 </Reveal>
 

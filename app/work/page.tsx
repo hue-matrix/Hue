@@ -16,7 +16,7 @@ export default function WorkPage() {
                     </div>
                     <div className="relative w-full">
                         <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full mb-6">
-                            Selected projects
+                            Selected Projects
                         </h1>
                     </div>
                     <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">

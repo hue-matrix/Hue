@@ -21,7 +21,7 @@ export const Partners = () => {
             <div className="w-full md:w-1/4 shrink-0">
                 <Reveal width="100%">
                     <p className="font-sans font-medium text-[14px] leading-[21px] text-[#918f8b]">
-                        Brands we've helped <br className="hidden md:block" /> grow on social.
+                        Brands We've Helped <br className="hidden md:block" /> Grow On Social.
                     </p>
                 </Reveal>
             </div>

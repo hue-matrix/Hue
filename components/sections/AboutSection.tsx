@@ -18,10 +18,10 @@ export const AboutSection = () => {
 
                 <div>
                     <Reveal>
-                        <span className="text-sm font-medium uppercase tracking-widest text-foreground/40 mb-4 block">Meet the Founder</span>
+                        <span className="text-sm font-medium uppercase tracking-widest text-foreground/40 mb-4 block">Meet The Founder</span>
                         <h2 className="text-4xl md:text-5xl font-bold font-serif mb-8 leading-tight">
-                            Design should feel <br />
-                            <span className="italic text-foreground/60">thoughtful & natural.</span>
+                            Design Should Feel <br />
+                            <span className="italic text-foreground/60">Thoughtful & Natural.</span>
                         </h2>
                     </Reveal>
 

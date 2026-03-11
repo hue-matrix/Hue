@@ -14,40 +14,40 @@ export default function CareersPage() {
             <div className="pt-32 pb-20 w-full max-w-[1100px] mx-auto px-4 md:px-6">
 
                 {/* Header */}
-                <div className="flex flex-col items-start text-left space-y-6 mb-12">
+                <div className="flex flex-col items-start text-left space-y-4 mb-8">
                     <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
-                        Work with us
+                        Work With Us
                     </div>
                     <div className="relative w-full">
                         <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10">
-                            Work with us
+                            Work With Us
                         </h1>
                     </div>
-                    <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">
+                    <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[1.8] text-[#918f8b] max-w-2xl">
                         We’re always open to working with people and partners who value quality, clarity, and excellent work.
                     </p>
                 </div>
 
                 {/* Dual Forms */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
                     {/* Careers Form */}
                     <FormContainer title="Join Our Team" delay={0}>
-                        <form className="space-y-8 flex flex-col h-full">
-                            <div className="space-y-8 flex-grow">
+                        <form className="space-y-6 flex flex-col h-full">
+                            <div className="space-y-6 flex-grow">
                                 <FormInput label="Full Name*" name="fullName" type="text" placeholder="Full Name*" required />
                                 <FormInput label="Email Address*" name="email" type="email" placeholder="Email Address*" required />
                                 <FormInput label="Contact Number*" name="phone" type="tel" placeholder="Contact Number*" required />
                                 <FormInput label="Current Location" name="location" type="text" placeholder="Current Location" />
                                 <FormInput label="Role You’re Applying For" name="role" type="text" placeholder="Role You’re Applying For" />
-                                <FormInput label="Years of Experience" name="experience" type="number" placeholder="Years of Experience" />
+                                <FormInput label="Years Of Experience" name="experience" type="number" placeholder="Years Of Experience" />
 
                                 {/* Resume Upload */}
                                 <div className="space-y-2">
                                     <label className="sr-only">Upload Resume</label>
-                                    <div className="border border-dashed border-black/20 rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors group">
-                                        <Upload size={24} className="text-black/40 group-hover:text-black transition-colors" />
-                                        <span className="text-sm text-black/60">Click to upload or drag and drop Resume</span>
+                                    <div className="border border-dashed border-black/20 rounded-xl p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors group">
+                                        <Upload size={20} className="text-black/40 group-hover:text-black transition-colors" />
+                                        <span className="text-sm text-black/60">Upload Resume</span>
                                         <input type="file" className="hidden" accept=".pdf,.doc,.docx" />
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ export default function CareersPage() {
                                 <FormInput label="Portfolio Link" name="portfolio" type="url" placeholder="Portfolio Link" />
                             </div>
 
-                            <div className="mt-8">
+                            <div className="mt-6">
                                 <SubmitButton label="Submit Application" />
                             </div>
                         </form>
@@ -64,18 +64,18 @@ export default function CareersPage() {
                     {/* Vendors Form */}
                     <FormContainer title="Partner With Us" delay={0.2}>
                         <div className="h-full flex flex-col">
-                            <form className="space-y-8 flex flex-col h-full">
-                                <div className="space-y-8 flex-grow">
+                            <form className="space-y-6 flex flex-col h-full">
+                                <div className="space-y-6 flex-grow">
                                     <FormInput label="Company / Individual Name*" name="companyName" type="text" placeholder="Company / Individual Name*" required />
                                     <FormInput label="Contact Person Name*" name="contactPerson" type="text" placeholder="Contact Person Name*" required />
                                     <FormInput label="Email Address*" name="vendorEmail" type="email" placeholder="Email Address*" required />
                                     <FormInput label="Contact Number*" name="vendorPhone" type="tel" placeholder="Contact Number*" required />
                                     <FormInput label="Location / City" name="vendorLocation" type="text" placeholder="Location / City" />
-                                    <FormInput label="Type of Service" name="serviceType" type="text" placeholder="Type of Service" />
+                                    <FormInput label="Type Of Service" name="serviceType" type="text" placeholder="Type Of Service" />
                                     <FormInput label="Previous Work / Website / Portfolio Link" name="vendorPortfolio" type="url" placeholder="Previous Work / Website / Portfolio Link" />
                                 </div>
 
-                                <div className="mt-8">
+                                <div className="mt-6">
                                     <SubmitButton label="Submit Details" />
                                 </div>
                             </form>
@@ -97,9 +97,9 @@ function FormContainer({ title, children, delay }: { title: string, children: Re
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay }}
-            className="bg-[#f7f2ea] rounded-[32px] p-8 md:p-12 shadow-sm flex flex-col h-full"
+            className="bg-[#f7f2ea] rounded-[32px] p-6 md:p-10 shadow-sm flex flex-col h-full"
         >
-            <h2 className="text-3xl font-sans font-bold mb-8 tracking-tight shrink-0">{title}</h2>
+            <h2 className="text-3xl font-sans font-bold mb-6 tracking-tight shrink-0">{title}</h2>
             <div className="flex-grow flex flex-col">
                 {children}
             </div>
@@ -122,7 +122,7 @@ const FormInput = ({
     required?: boolean
     hideLabel?: boolean
 }) => (
-    <div className="space-y-2">
+    <div className="space-y-1">
         <label
             className={
                 hideLabel
@@ -140,7 +140,7 @@ const FormInput = ({
             name={name}
             required={required}
             placeholder={placeholder}
-            className="w-full bg-transparent border-b border-black/10 focus:border-black outline-none py-4 text-xl transition-colors placeholder:text-black/20"
+            className="w-full bg-transparent border-b border-black/10 focus:border-black outline-none py-2 text-lg transition-colors placeholder:text-black/20"
         />
     </div>
 )

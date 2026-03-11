@@ -52,8 +52,8 @@ export const WhyUs = () => {
             <div className="text-center mb-20 px-4">
                 <Reveal width="100%">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter text-foreground">
-                        Why choose Hue Matrix over <br className="hidden md:block" />
-                        <span className="font-serif italic font-normal">everyone else?</span>
+                        Why Choose Hue Matrix Over <br className="hidden md:block" />
+                        <span className="font-serif italic font-normal">Everyone Else?</span>
                     </h2>
                 </Reveal>
             </div>

@@ -9,42 +9,42 @@ import { Magnetic } from "@/components/ui/Magnetic"
 const steps = [
     {
         icon: <MapPin className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Site visit & client brief",
+        title: "Site Visit & Client Brief",
         description: "We begin by understanding your space, lifestyle, and how you want the home to feel."
     },
     {
         icon: <Ruler className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "2D space planning",
+        title: "2D Space Planning",
         description: "Layouts are planned to ensure comfort, balance, and smooth movement within the space."
     },
     {
         icon: <Palette className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Concept & moodboard",
+        title: "Concept & Moodboard",
         description: "A visual direction is created to reflect the mood, colours, and materials that resonate with you."
     },
     {
         icon: <MessageCircle className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Design discussions",
+        title: "Design Discussions",
         description: "We refine the design through discussions to ensure it aligns perfectly with your vision."
     },
     {
         icon: <Box className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "3D visualisation",
+        title: "3D Visualisation",
         description: "Realistic views help you experience the space before execution begins."
     },
     {
         icon: <CheckCircle2 className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Design freeze",
+        title: "Design Freeze",
         description: "Once approved, the design is finalised to move confidently into execution."
     },
     {
         icon: <Layers className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Material finalisation",
+        title: "Material Finalisation",
         description: "Materials and finishes are selected to enhance warmth, harmony, and everyday living."
     },
     {
         icon: <FileOutput className="w-6 h-6 text-black" strokeWidth={1.5} />,
-        title: "Execution drawings",
+        title: "Execution Drawings",
         description: "Detailed drawings are prepared to ensure accurate and seamless on-site execution."
     }
 ]
@@ -68,7 +68,7 @@ export const Process = () => {
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
                 <div className="bg-[#E5E4DE] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
-                    How it works
+                    How It Works
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ export const Process = () => {
             <div className="text-center mb-20 px-4">
                 <Reveal width="100%">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter text-foreground">
-                        We like to keep things <span className="font-serif italic font-normal">nice</span> and simple.
+                        We Like To Keep Things <span className="font-serif italic font-normal">Nice</span> And Simple.
                     </h2>
                 </Reveal>
             </div>

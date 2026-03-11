@@ -29,7 +29,7 @@ export const Work = () => {
         <section className="py-24 px-4 md:px-6 max-w-7xl mx-auto">
             <Reveal>
                 <h2 className="text-4xl md:text-6xl font-bold mb-16">
-                    Recent <span className="font-serif italic font-normal text-white/70">work</span>
+                    Recent <span className="font-serif italic font-normal text-white/70">Work</span>
                 </h2>
             </Reveal>
 

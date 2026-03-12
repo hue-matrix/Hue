@@ -22,7 +22,7 @@ export const Hero = () => {
                 ` }} />
                 <Reveal>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-medium tracking-tighter leading-[1.05] mb-6 max-w-[15ch] lg:max-w-none" style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif', fontWeight: 500, color: 'rgb(0, 0, 0)' }}>
-                        Creating Spaces You <br className="hidden lg:block" /> Truly <span className="italic font-normal" style={{ fontFamily: "'Source Serif 4', serif", fontWeight: 600 }}>Belong</span> In.
+                        Creating Spaces <br /> You Truly <br/><span className="italic font-normal" style={{ fontFamily: "'Source Serif 4', serif", fontWeight: 600 }}>Belong</span> In.
                     </h1>
                 </Reveal>
 

@@ -6,11 +6,12 @@ import { motion, useInView, useAnimation } from "framer-motion"
 interface Props {
     children: React.ReactNode
     width?: "fit-content" | "100%"
+    height?: "fit-content" | "100%" | string
     delay?: number
     className?: string
 }
 
-export const Reveal = ({ children, width = "fit-content", delay = 0.25, className }: Props) => {
+export const Reveal = ({ children, width = "fit-content", height = "fit-content", delay = 0.25, className }: Props) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimation()
@@ -22,7 +23,7 @@ export const Reveal = ({ children, width = "fit-content", delay = 0.25, classNam
     }, [isInView, mainControls])
 
     return (
-        <div ref={ref} style={{ position: "relative", width, overflow: "visible" }} className={className}>
+        <div ref={ref} style={{ position: "relative", width, height, overflow: "visible" }} className={className}>
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 75 },

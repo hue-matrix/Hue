@@ -111,12 +111,21 @@ function ServiceIconCard({ item, index }: { item: any; index: number }) {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
             whileHover={{ scale: 1.03, transition: { type: "spring", stiffness: 400, damping: 30 } }}
-            className="bg-[#f7f2ea] rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center gap-5 text-center group cursor-pointer transition-colors duration-500 h-full aspect-square"
+            className="bg-[#faf8f4] rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center gap-5 text-center group cursor-pointer transition-colors duration-500 h-full aspect-square"
             data-cursor="hover"
         >
-            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300">
+            <motion.div 
+                className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: index * 0.2
+                }}
+            >
                 <Icon strokeWidth={1.5} size={26} />
-            </div>
+            </motion.div>
             <span className="text-sm md:text-base font-sans font-medium leading-snug">
                 {item.label}
             </span>

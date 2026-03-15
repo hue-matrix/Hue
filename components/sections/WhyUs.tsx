@@ -74,7 +74,17 @@ export const WhyUs = () => {
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 data-cursor="hover"
                             >
-                                {pillar.icon}
+                                <motion.div
+                                    animate={{ y: [0, -8, 0] }}
+                                    transition={{ 
+                                        duration: 5, 
+                                        repeat: Infinity, 
+                                        ease: "easeInOut",
+                                        delay: index * 0.3
+                                    }}
+                                >
+                                    {pillar.icon}
+                                </motion.div>
                                 <h3 className="text-2xl font-bold font-sans text-foreground mb-4">{pillar.title}</h3>
                                 <p className="text-[#7d7b77] leading-relaxed font-sans text-lg font-light">
                                     {pillar.description}

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer"
 import { Preloader } from "@/components/Preloader"
 import { Process } from "@/components/sections/Process"
 import { WhyUs } from "@/components/sections/WhyUs"
+import { CTA } from "@/components/sections/CTA"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <WhyUs />
         <Process />
         <FAQ />
+        <CTA />
         <Footer />
       </div>
     </main>

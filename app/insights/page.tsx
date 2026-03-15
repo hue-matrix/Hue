@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import { useRef, useState, MouseEvent } from "react"
 import Image from "next/image"
+import { CTA } from "@/components/sections/CTA"
 
 const insights = [
     {
@@ -16,7 +17,7 @@ const insights = [
     },
     {
         title: "Hardware",
-        excerpt: "The subtle details that elevate functional design.",
+        excerpt: "The subtle details that elevate functional design and bring spaces to life.",
         image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop",
         color: "#c8c2b9"
     },
@@ -69,7 +70,7 @@ export default function InsightsPage() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
                     {insights.map((insight, index) => (
                         <InsightCard key={index} insight={insight} index={index} />
                     ))}
@@ -77,6 +78,9 @@ export default function InsightsPage() {
 
             </div>
 
+            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
+                <CTA />
+            </div>
             <Footer />
         </main>
     )
@@ -88,35 +92,41 @@ function InsightCard({ insight, index }: { insight: { title: string, excerpt: st
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.1 } }}
             viewport={{ once: true, margin: "-10%" }}
-            className="group relative cursor-pointer bg-[#f7f2ea] rounded-[32px] overflow-hidden flex flex-col h-full"
-            data-cursor="hover" // For custom cursor scaling
+            className="group flex flex-col gap-6 w-full h-full"
+            data-cursor="hover"
         >
-            <div className="flex flex-col flex-grow">
-                {/* Image Container */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden shrink-0">
-                    <Image
-                        src={insight.image}
-                        alt={insight.title}
-                        fill
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+            {/* Image Card: Taller aspect ratio as requested */}
+            <div className="relative aspect-square w-full overflow-hidden rounded-[1.25rem] shrink-0 border border-black/5">
+                <Image
+                    src={insight.image}
+                    alt={insight.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+            </div>
+
+            {/* Content Card: Uniform height irrespective of content */}
+            <div className="bg-[#f7f2ea] rounded-[1.25rem] p-4 flex flex-col relative border border-black/5 w-full min-h-[100px]">
+                <div className="space-y-2">
+                    <h3 className="text-[20px] leading-[30px] font-sans font-medium text-black max-w-[90%]">
+                        {insight.title}
+                    </h3>
+                    <p className="text-[16px] leading-[24px] font-sans font-medium text-black/48 max-w-[85%] line-clamp-2">
+                        {insight.excerpt}
+                    </p>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 md:p-8 flex flex-col justify-between flex-grow relative">
-                    <div className="space-y-3">
-                        <h3 className="text-[20px] font-sans font-medium leading-[30px] text-black">
-                            {insight.title}
-                        </h3>
-                        <p className="text-[16px] text-black/50 font-medium leading-[24px]">
-                            {insight.excerpt}
-                        </p>
-                    </div>
-
-                    {/* Arrow Indicator at bottom right */}
-                    <div className="absolute bottom-6 right-6 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
-                        <ArrowUpRight strokeWidth={2} size={20} />
-                    </div>
+                {/* Micro-interaction Button: Positioned precisely */}
+                <div className="absolute right-6 md:right-8 bottom-6 md:bottom-8 w-9 h-9 bg-black text-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
+                    <motion.div
+                        initial={{ rotate: 0 }}
+                        whileHover={{ rotate: -45 }}
+                        className="flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </motion.div>
                 </div>
             </div>
         </motion.div>

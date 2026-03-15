@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Upload } from "lucide-react"
 import { useState } from "react"
+import { CTA } from "@/components/sections/CTA"
 
 export default function CareersPage() {
     return (
@@ -85,6 +86,9 @@ export default function CareersPage() {
                 </div>
             </div>
 
+            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
+                <CTA />
+            </div>
             <Footer />
         </main>
     )

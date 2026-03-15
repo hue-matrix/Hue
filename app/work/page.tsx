@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
+import { CTA } from "@/components/sections/CTA"
 
 
 export default function WorkPage() {
@@ -23,6 +24,9 @@ export default function WorkPage() {
                         A showcase of our finest projects and design excellence, tailored to reflect individual personalities.
                     </p>
                 </div>
+            </div>
+            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
+                <CTA />
             </div>
             <Footer />
         </main>

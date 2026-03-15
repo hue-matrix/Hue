@@ -8,6 +8,7 @@ import {
     ChefHat, Shirt, BookOpen, Tv, Bath, Wine, Flame, DoorOpen,
     Briefcase, Armchair, Archive, Sofa, Utensils, Bed, Layers, Home, Coffee
 } from "lucide-react"
+import { CTA } from "@/components/sections/CTA"
 
 const categories = [
     {
@@ -92,6 +93,9 @@ export default function ServicesPage() {
 
             </div>
 
+            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
+                <CTA />
+            </div>
             <Footer />
         </main>
     )

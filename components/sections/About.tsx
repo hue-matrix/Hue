@@ -11,7 +11,7 @@ export const About = () => {
 
             <div className="container px-4 md:px-6 mx-auto mb-12">
                 <div className="flex flex-col items-start text-left space-y-6">
-                    <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
+                    <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
                         About Us
                     </div>
                     <div className="relative">

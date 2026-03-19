@@ -43,7 +43,7 @@ export const WhyUs = () => {
 
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
-                <div className="bg-[#E5E4DE] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
+                <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
                     Why Us
                 </div>
             </div>

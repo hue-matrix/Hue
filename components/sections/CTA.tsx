@@ -16,9 +16,8 @@ export const CTA = () => {
                     className="bg-[#f7f2ea] rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-center items-center text-center gap-6 border border-black/5"
                 >
 
-                    {/* Badge */}
-                    <div className="px-5 py-2 bg-white/50 backdrop-blur-sm rounded-full text-sm font-semibold text-black/80 bg-[#e5e4de]">
-                        Get started
+                    <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
+                        Get Started
                     </div>
 
                     {/* Text Area */}

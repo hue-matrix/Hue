@@ -70,7 +70,7 @@ export const Process = () => {
 
                         {/* LEFT: Heading */}
                         <div className="w-[45%] flex flex-col justify-center items-start h-[100vh]">
-                            <div className="bg-[#E5E4DE] px-5 py-2 rounded-full text-xs font-bold tracking-widest text-[#1a1a1a] uppercase mb-8">
+                            <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5 mb-8">
                                 Process
                             </div>
                             <h2 className="text-5xl xl:text-[56px] font-sans font-bold tracking-tighter text-[#1a1a1a] leading-[1.1] max-w-lg">
@@ -101,7 +101,7 @@ export const Process = () => {
                 {/* ─── MOBILE / TABLET (Vertical Timeline Fallback) ─── */}
                 <div className="lg:hidden">
                     <div className="flex justify-center mb-6">
-                        <div className="bg-[#E5E4DE] px-5 py-2 rounded-full text-xs font-bold tracking-widest text-[#1a1a1a] uppercase">
+                        <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
                             Process
                         </div>
                     </div>
@@ -123,7 +123,7 @@ export const Process = () => {
                                                 {step.icon}
                                             </div>
                                             <div>
-                                                <div className="text-[11px] font-bold tracking-widest uppercase text-black/50 group-hover:text-black/70 mb-2 transition-colors">
+                                                <div className="text-[11px] font-bold tracking-widest text-black/50 group-hover:text-black/70 mb-2 transition-colors">
                                                     Step — 0{index + 1}
                                                 </div>
                                                 <h3 className="text-xl font-bold font-sans tracking-tight text-[#1a1a1a] mb-2">{step.title}</h3>
@@ -184,7 +184,7 @@ const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: num
                 </div>
                 
                 <div className="flex flex-col gap-1.5 relative z-10 box-border">
-                    <div className="text-[11px] font-bold tracking-widest uppercase text-black/50">
+                    <div className="text-[11px] font-bold tracking-widest text-black/50">
                         Step — 0{index + 1}
                     </div>
                     <motion.h3 

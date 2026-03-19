@@ -16,9 +16,9 @@ const partners = [
 
 export const Partners = () => {
     return (
-        <section className="py-12 lg:py-20 bg-background overflow-hidden flex flex-col md:flex-row items-center gap-8 lg:gap-12 mx-auto px-6 md:px-12">
+        <section className="py-12 lg:py-20 bg-background overflow-hidden flex flex-col md:flex-row items-center gap-8 lg:gap-4 mx-auto px-6 md:px-12">
             {/* Left Static Text */}
-            <div className="w-full md:w-1/4 shrink-0">
+            <div className="w-full md:w-auto shrink-0">
                 <Reveal width="100%">
                     <p className="font-sans font-medium text-[14px] leading-[21px] text-[#918f8b]">
                         Brands We've Helped <br className="hidden md:block" /> Grow On Social.
@@ -27,7 +27,7 @@ export const Partners = () => {
             </div>
 
             {/* Right Infinite Marquee */}
-            <div className="w-full md:w-3/4 relative flex overflow-hidden mask-gradient-x">
+            <div className="w-full md:flex-1 relative flex overflow-hidden mask-gradient-x">
                 <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
                 <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 

@@ -124,14 +124,21 @@ export const Services = () => {
 
             {/* Grid Layout */}
             <div className="max-w-[1400px] px-6 md:px-10 mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                    {services.map((service, index) => (
-                        <ServiceCard
-                            key={index}
-                            service={service}
-                            index={index}
-                        />
-                    ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 md:gap-10">
+                    {services.map((service, index) => {
+                        let lgCols = "lg:col-span-2";
+                        if (index === 3) lgCols = "lg:col-span-3";
+                        if (index === 4) lgCols = "lg:col-span-3";
+
+                        return (
+                            <div key={index} className={`w-full h-full ${lgCols}`}>
+                                <ServiceCard
+                                    service={service}
+                                    index={index}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 

@@ -39,7 +39,7 @@ const pillars = [
 
 export const WhyUs = () => {
     return (
-        <section className="py-24 bg-[#efebe5] relative">
+        <section className="pt-24 pb-12 bg-[#efebe5] relative">
 
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
@@ -76,9 +76,9 @@ export const WhyUs = () => {
                             >
                                 <motion.div
                                     animate={{ y: [0, -8, 0] }}
-                                    transition={{ 
-                                        duration: 5, 
-                                        repeat: Infinity, 
+                                    transition={{
+                                        duration: 5,
+                                        repeat: Infinity,
                                         ease: "easeInOut",
                                         delay: index * 0.3
                                     }}

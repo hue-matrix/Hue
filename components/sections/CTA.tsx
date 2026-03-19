@@ -9,7 +9,7 @@ export const CTA = () => {
         <section className="py-20 flex flex-col items-center">
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {/* Left Card: Content */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -40,21 +40,21 @@ export const CTA = () => {
                 </motion.div>
 
                 {/* Right Card: Image */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     className="bg-[#f7f2ea] rounded-[2.5rem] relative overflow-hidden flex items-center justify-center min-h-[500px] border border-black/5"
                 >
 
-                        <Image 
-                            src="/assets/cta/mockup.png" 
-                            alt="Phone Mockup" 
-                            fill
-                            className="object-cover drop-shadow-2xl"
-                            priority
-                        />
-                    
+                    <Image
+                        src="/assets/cta/mockup.png"
+                        alt="Phone Mockup"
+                        fill
+                        className="object-cover drop-shadow-2xl"
+                        priority
+                    />
+
                     {/* Subtle Radial Glow */}
                     <div className="absolute inset-0 bg-radial-gradient from-black/[0.03] to-transparent opacity-50" />
                 </motion.div>

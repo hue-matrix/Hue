@@ -1,49 +1,48 @@
 "use client"
 
 import { Reveal } from "@/components/ui/reveal"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { MapPin, Ruler, Palette, MessageCircle, Box, CheckCircle2, Layers, FileOutput } from "lucide-react"
-import { useRef } from "react"
-import { Magnetic } from "@/components/ui/Magnetic"
+import { useRef, useState } from "react"
 
 const steps = [
     {
-        icon: <MapPin className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Site Visit & Client Brief",
         description: "We begin by understanding your space, lifestyle, and how you want the home to feel."
     },
     {
-        icon: <Ruler className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <Ruler className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "2D Space Planning",
         description: "Layouts are planned to ensure comfort, balance, and smooth movement within the space."
     },
     {
-        icon: <Palette className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <Palette className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Concept & Moodboard",
         description: "A visual direction is created to reflect the mood, colours, and materials that resonate with you."
     },
     {
-        icon: <MessageCircle className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Design Discussions",
         description: "We refine the design through discussions to ensure it aligns perfectly with your vision."
     },
     {
-        icon: <Box className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <Box className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "3D Visualisation",
         description: "Realistic views help you experience the space before execution begins."
     },
     {
-        icon: <CheckCircle2 className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Design Freeze",
         description: "Once approved, the design is finalised to move confidently into execution."
     },
     {
-        icon: <Layers className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <Layers className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Material Finalisation",
         description: "Materials and finishes are selected to enhance warmth, harmony, and everyday living."
     },
     {
-        icon: <FileOutput className="w-6 h-6 text-black" strokeWidth={1.5} />,
+        icon: <FileOutput className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
         title: "Execution Drawings",
         description: "Detailed drawings are prepared to ensure accurate and seamless on-site execution."
     }
@@ -53,142 +52,164 @@ export const Process = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start 0.8", "center center"]
+        offset: ["start start", "end end"]
     })
 
-    const pathLength = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    })
+    // We have 8 steps with 300px height. 
+    // Container translates -(7/8) * 100% = -87.5% perfectly mapping to exactly the 8th card.
+    const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "-87.5%"])
 
     return (
-        <section ref={containerRef} className="py-24 bg-[#efebe5] relative">
+        <section className="bg-[#efebe5] relative w-full lg:py-0 text-[#1a1a1a]">
+            {/* We apply max-w globally but clear out mobile top-spacing safely */}
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-full">
 
-            {/* Top Badge */}
-            <div className="flex justify-center mb-8">
-                <div className="bg-[#E5E4DE] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80">
-                    How It Works
-                </div>
-            </div>
+                {/* ─── DESKTOP (Sticky + Scrub) ─── */}
+                <div ref={containerRef} className="hidden lg:flex items-start gap-12 relative w-full h-[200vh]">
+                    <div className="sticky top-0 h-screen w-full flex items-center gap-12">
 
-            {/* Main Headline */}
-            <div className="text-center mb-20 px-4">
-                <Reveal width="100%">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter text-foreground">
-                        We Like To Keep Things <span className="font-serif italic font-normal">Nice</span> And Simple.
-                    </h2>
-                </Reveal>
-            </div>
-
-            {/* Desktop Snake Layout Container (Hidden on Mobile/Tablet) */}
-            <div className="hidden lg:block w-full mx-auto px-4 md:px-6 relative min-h-[600px]">
-
-                {/* SVG Path Layer */}
-                <div className="absolute inset-0 pointer-events-none z-0 top-[2.5rem]">
-                    <svg className="w-full h-full visible" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none">
-                        <motion.path
-                            d="M 150 0 L 1050 0 C 1150 0 1150 250 1050 250 L 150 250"
-                            stroke="#c8c8c8"
-                            strokeWidth="2"
-                            fill="none"
-                            initial={{ pathLength: 0 }}
-                            style={{ pathLength }}
-                            strokeLinecap="round"
-                        />
-                        {/* Glow Gradient Definitions if needed, but simple grey requested */}
-                    </svg>
-                </div>
-
-                {/* Steps */}
-                {/* Row 1: Left to Right */}
-                <div className="grid grid-cols-4 gap-4 mb-32 relative z-10 px-12">
-                    {steps.slice(0, 4).map((step, index) => (
-                        <ProcessCard key={index} step={step} index={index} />
-                    ))}
-                </div>
-
-                {/* Row 2: Right to Left (Reversed in DOM or Visually?) 
-                    Actually, for the snake path (1->2->3->4 \n 8<-7<-6<-5), 
-                    Row 2 logic should place them correctly.
-                    Grid cols are 1,2,3,4.
-                    Index 4 is Step 5 (First in row 2). It should be on FAR RIGHT (Col 4).
-                    Index 7 is Step 8. It should be on FAR LEFT (Col 1).
-                    So we render Row 2 in REVERSE order: 7, 6, 5, 4? No.
-                    Steps array: [4, 5, 6, 7].
-                    We want:
-                    Col 4: Step 5 (Index 4)
-                    Col 3: Step 6 (Index 5)
-                    Col 2: Step 7 (Index 6)
-                    Col 1: Step 8 (Index 7)
-                    
-                    So we can map steps.slice(4, 8).reverse()!
-                */}
-                <div className="grid grid-cols-4 gap-4 relative z-10 px-12 dir-rtl">
-                    {steps.slice(4, 8).reverse().map((step, index) => (
-                        /* Real index is 4 + (3 - index) because we reversed a slice of 4 */
-                        <ProcessCard key={index} step={step} index={4 + (3 - index)} /> // Fix index calculation for delay
-                    ))}
-                </div>
-            </div>
-
-            {/* Mobile/Tablet Vertical Layout (Visible on smaller screens) */}
-            <div className="block lg:hidden w-full px-4 md:px-6 mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                    {/* Vertical Line Removed */}
-
-                    {steps.map((step, index) => (
-                        <Reveal key={index} delay={index * 0.05}>
-                            <div className="relative pl-12 md:pl-0 flex flex-col items-start md:items-center text-left md:text-center gap-4">
-                                {/* Mobile Line Segment */}
-                                {index !== steps.length - 1 && (
-                                    <div className="absolute left-[23px] top-[13px] bottom-[-40px] w-0.5 bg-black/5 md:hidden" />
-                                )}
-
-                                {/* Mobile Dot */}
-                                <span className="absolute left-[19px] top-2 w-[9px] h-[9px] rounded-full bg-black md:hidden ring-4 ring-[#efebe5] z-10"></span>
-
-                                <div className="w-16 h-16 bg-[#f7f2ea] rounded-xl flex items-center justify-center">
-                                    {step.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-bold font-sans mb-1">{step.title}</h3>
-                                    <p className="text-sm text-foreground/60 leading-relaxed">
-                                        {step.description}
-                                    </p>
-                                </div>
+                        {/* LEFT: Heading */}
+                        <div className="w-[45%] flex flex-col justify-center items-start h-[100vh]">
+                            <div className="bg-[#E5E4DE] px-5 py-2 rounded-full text-xs font-bold tracking-widest text-[#1a1a1a] uppercase mb-8">
+                                Process
                             </div>
-                        </Reveal>
-                    ))}
-                </div>
-            </div>
+                            <h2 className="text-5xl xl:text-[56px] font-sans font-bold tracking-tighter text-[#1a1a1a] leading-[1.1] max-w-lg">
+                                We Like To Keep Things <br />
+                                <span className="font-serif italic font-normal text-black/70 mt-2 block">Nice</span> And Simple.
+                            </h2>
+                        </div>
 
+                        {/* RIGHT: Scrollable Steps instantly adjacent */}
+                        <div className="w-[55%] h-[100vh] relative overflow-hidden flex items-center pr-4">
+                            <div className="absolute inset-0 z-20 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #efebe5 5%, transparent 20%, transparent 80%, #efebe5 95%)' }} />
+
+                            <motion.div
+                                style={{ y: yContent }}
+                                className="flex flex-col absolute top-1/2 w-full mt-[-120px]"
+                            >
+                                <div className="w-full flex flex-col pr-4">
+                                    {steps.map((step, index) => (
+                                        <StepCard key={index} step={step} index={index} progress={scrollYProgress} />
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* ─── MOBILE / TABLET (Vertical Timeline Fallback) ─── */}
+                <div className="lg:hidden">
+                    <div className="flex justify-center mb-6">
+                        <div className="bg-[#E5E4DE] px-5 py-2 rounded-full text-xs font-bold tracking-widest text-[#1a1a1a] uppercase">
+                            Process
+                        </div>
+                    </div>
+                    <div className="text-center mb-16 px-4">
+                        <Reveal width="100%">
+                            <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter text-[#1a1a1a] leading-tight">
+                                We Like To Keep Things <br /> <span className="font-serif italic font-normal text-black/70">Nice</span> And Simple.
+                            </h2>
+                        </Reveal>
+                    </div>
+
+                    <div className="relative">
+                        <div className="flex flex-col gap-6">
+                            {steps.map((step, index) => (
+                                <Reveal key={index} delay={index * 0.05} y={30}>
+                                    <div className="relative px-4 flex flex-col gap-2">
+                                        <div className="bg-[#333333] text-white rounded-3xl p-6 md:p-8 flex flex-col gap-5 border border-white/5 hover:bg-[#111111] transition-colors duration-500 group shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+                                            <div className="w-14 h-14 rounded-full bg-[#555555] flex items-center justify-center text-white shrink-0 group-hover:bg-[#2a2a2a] transition-colors">
+                                                {step.icon}
+                                            </div>
+                                            <div>
+                                                <div className="text-[11px] font-bold tracking-widest uppercase text-white/60 group-hover:text-white/80 mb-2 transition-colors">
+                                                    Step — 0{index + 1}
+                                                </div>
+                                                <div className="text-xl font-bold font-sans tracking-tight text-white mb-2">{step.title}</div>
+                                                <div className="text-[15px] text-white/70 group-hover:text-white/80 leading-relaxed transition-colors">
+                                                    {step.description}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Reveal>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     )
 }
 
-const ProcessCard = ({ step, index }: { step: any, index: number }) => {
-    return (
-        <div className="flex flex-col items-center text-center gap-6 group">
-            <div
-                className="w-20 h-20 bg-[#f7f2ea] rounded-2xl flex items-center justify-center shadow-sm relative z-10 cursor-pointer group-hover:scale-110 transition-transform duration-300"
-            >
-                {step.icon}
-            </div>
+const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: number, progress: MotionValue<number> }) => {
+    // 8 steps total.
+    // Center of step i is at i/7.
+    const center = index / 7;
+    const stepDist = 1 / 7;
 
+    // Abstract the scroll value into a generic relative distance MotionValue.
+    // This forces Framer Motion to use stable generic JS interpolation rather than buggy clamped WAAPI keyframes!
+    const distance = useTransform(progress, (p) => p - center);
+
+    const activeRange = [
+        -2 * stepDist,
+        -1 * stepDist,
+        0,
+        1 * stepDist,
+        2 * stepDist
+    ];
+
+    const opacity = useTransform(distance, activeRange, [0, 0.4, 1, 0.4, 0]);
+    const scale = useTransform(distance, activeRange, [0.85, 0.95, 1, 0.95, 0.85]);
+    const backgroundColor = useTransform(distance, activeRange, ["#333333", "#333333", "#111111", "#333333", "#333333"]);
+    const textColor = useTransform(distance, activeRange, ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"]);
+    const mutedTextColor = useTransform(distance, activeRange, [
+        "rgba(255,255,255,0.6)",
+        "rgba(255,255,255,0.6)",
+        "rgba(255,255,255,0.8)",
+        "rgba(255,255,255,0.6)",
+        "rgba(255,255,255,0.6)"
+    ]);
+    const iconBgColor = useTransform(distance, activeRange, ["#555555", "#555555", "#2a2a2a", "#555555", "#555555"]);
+
+    return (
+        <div className="w-full flex justify-center py-4" style={{ height: "240px" }}>
             <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="flex flex-col gap-3"
+                style={{ opacity, scale, backgroundColor }}
+                className="flex items-start gap-6 p-8 lg:p-10 rounded-[2.5rem] relative overflow-hidden border border-black/5 w-full h-full shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
             >
-                <h3 className="text-lg font-bold font-sans tracking-tight text-foreground">
-                    {step.title}
-                </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed font-sans max-w-[220px] mx-auto">
-                    {step.description}
-                </p>
+                <div className="shrink-0 pt-0.5">
+                    <motion.div
+                        style={{ backgroundColor: iconBgColor, color: textColor }}
+                        className="w-14 h-14 rounded-full flex items-center justify-center"
+                    >
+                        {step.icon}
+                    </motion.div>
+                </div>
+
+                <div className="flex flex-col gap-1.5 relative z-10 box-border">
+                    <motion.div
+                        style={{ color: mutedTextColor }}
+                        className="text-[11px] font-bold tracking-widest uppercase"
+                    >
+                        Step — 0{index + 1}
+                    </motion.div>
+                    <motion.div
+                        style={{ color: textColor }}
+                        className="text-[22px] font-bold font-sans tracking-tight"
+                    >
+                        {step.title}
+                    </motion.div>
+                    <motion.div
+                        style={{ color: mutedTextColor }}
+                        className="text-[15px] leading-relaxed mt-0.5 line-clamp-3"
+                    >
+                        {step.description}
+                    </motion.div>
+                </div>
             </motion.div>
         </div>
     )

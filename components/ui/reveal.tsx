@@ -9,9 +9,10 @@ interface Props {
     height?: "fit-content" | "100%" | string
     delay?: number
     className?: string
+    y?: number
 }
 
-export const Reveal = ({ children, width = "fit-content", height = "fit-content", delay = 0.25, className }: Props) => {
+export const Reveal = ({ children, width = "fit-content", height = "fit-content", delay = 0.25, className, y = 75 }: Props) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimation()
@@ -26,7 +27,7 @@ export const Reveal = ({ children, width = "fit-content", height = "fit-content"
         <div ref={ref} style={{ position: "relative", width, height, overflow: "visible" }} className={className}>
             <motion.div
                 variants={{
-                    hidden: { opacity: 0, y: 75 },
+                    hidden: { opacity: 0, y: y },
                     visible: { opacity: 1, y: 0 },
                 }}
                 initial="hidden"

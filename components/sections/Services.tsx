@@ -48,12 +48,12 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-[#f6f2eb] rounded-[48px] p-8 md:p-10 flex flex-col items-start text-left group hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative h-full border border-black/5"
+            className="bg-[#f6f2eb] rounded-[36px] p-6 md:p-8 flex flex-col items-center text-center group hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative h-full border border-black/5"
             whileHover={{ y: -5, transition: { duration: 0.3 } }}
             data-cursor="hover"
         >
             {/* Image Container */}
-            <div className="relative w-full aspect-square mb-8 rounded-3xl overflow-hidden bg-white/10 flex items-center justify-center p-4">
+            <div className="relative w-[65%] aspect-square mb-6 rounded-3xl overflow-hidden bg-white/10 flex items-center justify-center p-3 mx-auto">
                 <motion.div
                     className="relative w-full h-full z-10"
                     animate={{ y: [0, -15, 0] }}
@@ -82,14 +82,14 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
                 </motion.div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
                 {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-bold font-sans tracking-tight text-foreground leading-tight">
+                <h3 className="text-xl md:text-2xl font-bold font-sans tracking-tight text-foreground leading-tight">
                     {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#6b6b6b] leading-relaxed font-sans text-lg lg:text-[1.1rem]">
+                <p className="text-[#6b6b6b] leading-relaxed font-sans text-[15px]">
                     {service.description}
                 </p>
             </div>
@@ -123,19 +123,23 @@ export const Services = () => {
             </div>
 
             {/* Grid Layout */}
-            <div className="max-w-[1400px] px-6 md:px-10 mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 md:gap-10">
+            <div className="max-w-[850px] px-4 md:px-6 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                     {services.map((service, index) => {
-                        let lgCols = "lg:col-span-2";
-                        if (index === 3) lgCols = "lg:col-span-3";
-                        if (index === 4) lgCols = "lg:col-span-3";
+                        let wrapperClass = "flex justify-center w-full h-full";
+                        // Center the 5th card across both columns gracefully
+                        if (index === 4) {
+                            wrapperClass = "flex justify-center w-full h-full md:col-span-2";
+                        }
 
                         return (
-                            <div key={index} className={`w-full h-full ${lgCols}`}>
-                                <ServiceCard
-                                    service={service}
-                                    index={index}
-                                />
+                            <div key={index} className={wrapperClass}>
+                                <div className="w-full max-w-[380px] h-full">
+                                    <ServiceCard
+                                        service={service}
+                                        index={index}
+                                    />
+                                </div>
                             </div>
                         );
                     })}

@@ -48,12 +48,12 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-[#f6f2eb] rounded-[36px] p-6 md:p-8 flex flex-col items-center text-center group hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative h-full border border-black/5"
+            className="bg-[#f6f2eb] rounded-[32px] p-5 md:p-6 flex flex-col items-center text-center group hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative h-full border border-black/5"
             whileHover={{ y: -5, transition: { duration: 0.3 } }}
             data-cursor="hover"
         >
             {/* Image Container */}
-            <div className="relative w-[65%] aspect-square mb-6 rounded-3xl overflow-hidden bg-white/10 flex items-center justify-center p-3 mx-auto">
+            <div className="relative w-[60%] aspect-square mb-4 rounded-3xl overflow-hidden flex items-center justify-center p-0 mx-auto">
                 <motion.div
                     className="relative w-full h-full z-10"
                     animate={{ y: [0, -15, 0] }}
@@ -123,13 +123,18 @@ export const Services = () => {
             </div>
 
             {/* Grid Layout */}
-            <div className="max-w-[850px] px-4 md:px-6 mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <div className="max-w-[1250px] px-4 md:px-6 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 lg:gap-6">
                     {services.map((service, index) => {
-                        let wrapperClass = "flex justify-center w-full h-full";
-                        // Center the 5th card across both columns gracefully
+                        let wrapperClass = "flex justify-center w-full h-full md:col-span-1 lg:col-span-2";
+                        
+                        // Desktop 3-2 layout: 4th and 5th items span 3 cols. 
+                        // They are pushed left/right to perfectly center together maintaining exact gaps.
+                        if (index === 3) {
+                            wrapperClass = "flex justify-center lg:justify-end w-full h-full md:col-span-1 lg:col-span-3";
+                        }
                         if (index === 4) {
-                            wrapperClass = "flex justify-center w-full h-full md:col-span-2";
+                            wrapperClass = "flex justify-center lg:justify-start w-full h-full md:col-span-2 lg:col-span-3";
                         }
 
                         return (

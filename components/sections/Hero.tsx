@@ -7,7 +7,7 @@ import { Magnetic } from "@/components/ui/Magnetic"
 
 export const Hero = () => {
     return (
-        <section className="min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center px-6 md:px-12  mx-auto pt-32 pb-20">
+        <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-4 items-center px-6 md:px-12 mx-auto pt-32 pb-20">
             {/* Left Content */}
             <div className="flex flex-col items-start justify-center z-10 pt-8 lg:pt-0 ">
                 <style dangerouslySetInnerHTML={{
@@ -22,7 +22,7 @@ export const Hero = () => {
                 ` }} />
                 <Reveal>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-medium tracking-tighter leading-[1.05] mb-6 max-w-[15ch] lg:max-w-none" style={{ fontFamily: 'Inter, "Inter Placeholder", sans-serif', fontWeight: 500, color: 'rgb(0, 0, 0)' }}>
-                        Creating Spaces <br /> You Truly <br/><span className="italic font-normal" style={{ fontFamily: "'Source Serif 4', serif", fontWeight: 600 }}>Belong</span> In.
+                        Creating Spaces <br className="lg:hidden" /> You <br/>Truly <span className="italic font-normal" style={{ fontFamily: "'Source Serif 4', serif", fontWeight: 600 }}>Belong</span> In.
                     </h1>
                 </Reveal>
 
@@ -40,11 +40,11 @@ export const Hero = () => {
                                 Get in Touch
                             </Button>
                         </a>
-                        <a href="/services" data-cursor="hover">
+                        {/* <a href="/services" data-cursor="hover">
                             <Button variant="outline" className="rounded-full text-sm md:text-lg px-6 md:px-8 py-4 md:py-6 border-foreground/20 text-foreground hover:bg-foreground/5 transition-transform duration-300 transform hover:scale-105 backdrop-blur-sm whitespace-nowrap">
                                 Explore Services
                             </Button>
-                        </a>
+                        </a> */}
                     </div>
                 </Reveal>
             </div>

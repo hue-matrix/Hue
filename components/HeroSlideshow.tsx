@@ -59,10 +59,10 @@ export const HeroSlideshow = () => {
     }
 
     return (
-        // Adjusted height/width to be smaller as requested
-        <div className="relative w-full max-w-[280px] md:max-w-[340px] lg:max-w-[380px] h-[500px] md:h-[600px] bg-white p-2 rounded-[2.5rem] overflow-hidden group shadow-2xl mx-auto lg:ml-auto lg:mr-0 flex items-center justify-center">
+        // Adjusted height/width explicitly to match reference image (classic vertical card portrait) and avoid arbitrary aspect collapse
+        <div className="relative w-full max-w-[280px] md:max-w-[340px] lg:max-w-[400px] h-[500px] md:h-[580px] lg:h-[660px] bg-white p-1.5 md:p-2 overflow-hidden group shadow-2xl mx-auto lg:ml-auto lg:mr-0 flex items-center justify-center rounded-[28px] lg:rounded-[32px]">
             {/* Inner rounded wrapper for the actual image/video content */}
-            <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
+            <div className="relative w-full h-full rounded-[20px] overflow-hidden">
                 {/* Progress Bars */}
                 <div className="absolute top-6 left-6 right-6 z-20 flex gap-2">
                     {slides.map((slide, index) => (

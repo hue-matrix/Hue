@@ -2,38 +2,38 @@
 
 import { Reveal } from "@/components/ui/reveal"
 import { motion } from "framer-motion"
-import { Clock, UserCircle, LayoutGrid, Wallet, Leaf, Globe2 } from "lucide-react"
+import Image from "next/image"
 
 const pillars = [
     {
         title: "Honest Timelines",
         description: "Delivered as promised. We believe timelines should be honest and achievable without unnecessary extensions.",
-        icon: <Clock className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon1.gif" alt="Timelines" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Personalised Attention",
         description: "Focused attention on every space. Each project is handled with care from design to execution.",
-        icon: <UserCircle className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon2.gif" alt="Attention" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Modular Services",
         description: "Flexible options where you choose only what you need, from styling to complete solutions.",
-        icon: <LayoutGrid className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon3.gif" alt="Services" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Budget-Conscious",
         description: "Good design is accessible. We offer cost-effective options with quality and clarity.",
-        icon: <Wallet className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon4.gif" alt="Budget" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Sustainability",
         description: "Environmental responsibility is a core value woven into every design and execution choice.",
-        icon: <Leaf className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon5.gif" alt="Sustainability" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "NRI-Friendly",
         description: "Remote management for those not on-site, ensuring peace of mind through regular updates and clear communication.",
-        icon: <Globe2 className="w-10 h-10 md:w-12 md:h-12 text-black mb-6" strokeWidth={1} />
+        icon: <Image src="/assets/icons/icon6.gif" alt="NRI Friendly" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     }
 ]
 

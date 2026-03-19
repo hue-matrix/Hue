@@ -118,18 +118,18 @@ export const Process = () => {
                             {steps.map((step, index) => (
                                 <Reveal key={index} delay={index * 0.05} y={30}>
                                     <div className="relative px-4 flex flex-col gap-2">
-                                        <div className="bg-[#333333] text-white rounded-3xl p-6 md:p-8 flex flex-col gap-5 border border-white/5 hover:bg-[#111111] transition-colors duration-500 group shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
-                                            <div className="w-14 h-14 rounded-full bg-[#555555] flex items-center justify-center text-white shrink-0 group-hover:bg-[#2a2a2a] transition-colors">
+                                        <div className="bg-[#f7f3ed] rounded-3xl p-6 md:p-8 flex flex-col gap-5 border border-black/5 hover:bg-[#ffffff] transition-colors duration-500 group shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+                                            <div className="w-14 h-14 rounded-full bg-[#1a1a1a] flex items-center justify-center text-white shrink-0 group-hover:bg-[#2a2a2a] transition-colors">
                                                 {step.icon}
                                             </div>
                                             <div>
-                                                <div className="text-[11px] font-bold tracking-widest uppercase text-white/60 group-hover:text-white/80 mb-2 transition-colors">
+                                                <div className="text-[11px] font-bold tracking-widest uppercase text-black/50 group-hover:text-black/70 mb-2 transition-colors">
                                                     Step — 0{index + 1}
                                                 </div>
-                                                <div className="text-xl font-bold font-sans tracking-tight text-white mb-2">{step.title}</div>
-                                                <div className="text-[15px] text-white/70 group-hover:text-white/80 leading-relaxed transition-colors">
+                                                <h3 className="text-xl font-bold font-sans tracking-tight text-[#1a1a1a] mb-2">{step.title}</h3>
+                                                <p className="text-[15px] text-[#1a1a1a]/70 group-hover:text-[#1a1a1a]/80 leading-relaxed transition-colors">
                                                     {step.description}
-                                                </div>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -164,16 +164,9 @@ const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: num
 
     const opacity = useTransform(distance, activeRange, [0, 0.4, 1, 0.4, 0]);
     const scale = useTransform(distance, activeRange, [0.85, 0.95, 1, 0.95, 0.85]);
-    const backgroundColor = useTransform(distance, activeRange, ["#333333", "#333333", "#111111", "#333333", "#333333"]);
-    const textColor = useTransform(distance, activeRange, ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"]);
-    const mutedTextColor = useTransform(distance, activeRange, [
-        "rgba(255,255,255,0.6)",
-        "rgba(255,255,255,0.6)",
-        "rgba(255,255,255,0.8)",
-        "rgba(255,255,255,0.6)",
-        "rgba(255,255,255,0.6)"
-    ]);
-    const iconBgColor = useTransform(distance, activeRange, ["#555555", "#555555", "#2a2a2a", "#555555", "#555555"]);
+    const backgroundColor = useTransform(distance, activeRange, ["#efebe5", "#efebe5", "#f7f3ed", "#efebe5", "#efebe5"]);
+    const iconBgColor = useTransform(distance, activeRange, ["#d4d0ca", "#d4d0ca", "#1a1a1a", "#d4d0ca", "#d4d0ca"]);
+    const iconTextColor = useTransform(distance, activeRange, ["#1a1a1a", "#1a1a1a", "#ffffff", "#1a1a1a", "#1a1a1a"]);
 
     return (
         <div className="w-full flex justify-center py-4" style={{ height: "240px" }}>
@@ -183,32 +176,27 @@ const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: num
             >
                 <div className="shrink-0 pt-0.5">
                     <motion.div
-                        style={{ backgroundColor: iconBgColor, color: textColor }}
+                        style={{ backgroundColor: iconBgColor, color: iconTextColor }}
                         className="w-14 h-14 rounded-full flex items-center justify-center"
                     >
                         {step.icon}
                     </motion.div>
                 </div>
-
+                
                 <div className="flex flex-col gap-1.5 relative z-10 box-border">
-                    <motion.div
-                        style={{ color: mutedTextColor }}
-                        className="text-[11px] font-bold tracking-widest uppercase"
-                    >
+                    <div className="text-[11px] font-bold tracking-widest uppercase text-black/50">
                         Step — 0{index + 1}
-                    </motion.div>
-                    <motion.div
-                        style={{ color: textColor }}
+                    </div>
+                    <motion.h3 
                         className="text-[22px] font-bold font-sans tracking-tight"
                     >
                         {step.title}
-                    </motion.div>
-                    <motion.div
-                        style={{ color: mutedTextColor }}
-                        className="text-[15px] leading-relaxed mt-0.5 line-clamp-3"
+                    </motion.h3>
+                    <motion.p 
+                        className="text-[15px] leading-relaxed mt-0.5 line-clamp-3 text-black/70"
                     >
                         {step.description}
-                    </motion.div>
+                    </motion.p>
                 </div>
             </motion.div>
         </div>

@@ -6,33 +6,33 @@ import Image from "next/image"
 
 const pillars = [
     {
-        title: "Honest Timelines",
-        description: "Delivered as promised. We believe timelines should be honest and achievable without unnecessary extensions.",
+        title: "Honest Timelines, Delivered as Promised",
+        description: "We believe timelines should be honest and achievable. Every project is planned carefully and delivered when it is promised, without unnecessary extensions.",
         icon: <Image src="/assets/icons/icon1.gif" alt="Timelines" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
-        title: "Personalised Attention",
-        description: "Focused attention on every space. Each project is handled with care from design to execution.",
+        title: "Focused and Personalised Attention",
+        description: "Every space receives focused attention. From design to execution, each project is handled with care, ensuring details are thoughtfully planned and well executed.",
         icon: <Image src="/assets/icons/icon2.gif" alt="Attention" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
-        title: "Modular Services",
-        description: "Flexible options where you choose only what you need, from styling to complete solutions.",
+        title: "Flexible, Modular Services",
+        description: "You are free to choose only what you need. Whether it is design support, execution, or styling and décor for an existing space, we offer individual services as well as complete solutions.",
         icon: <Image src="/assets/icons/icon3.gif" alt="Services" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
-        title: "Budget-Conscious",
-        description: "Good design is accessible. We offer cost-effective options with quality and clarity.",
+        title: "Budget-Conscious Approach",
+        description: "Good design should be accessible. We offer flexible and cost-effective options, ensuring quality and clarity even when working within a defined budget.",
         icon: <Image src="/assets/icons/icon4.gif" alt="Budget" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
-        title: "Sustainability",
-        description: "Environmental responsibility is a core value woven into every design and execution choice.",
+        title: "Sustainability as a Core Value",
+        description: "Environmental responsibility is woven into every decision, guiding both design choices and execution methods.",
         icon: <Image src="/assets/icons/icon5.gif" alt="Sustainability" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
-        title: "NRI-Friendly",
-        description: "Remote management for those not on-site, ensuring peace of mind through regular updates and clear communication.",
+        title: "NRI-Friendly Process",
+        description: "If you cannot be present on site, we manage everything for you. Regular updates, clear communication, and remote coordination ensure peace of mind throughout.",
         icon: <Image src="/assets/icons/icon6.gif" alt="NRI Friendly" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
     }
 ]

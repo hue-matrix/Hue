@@ -18,12 +18,12 @@ const steps = [
     },
     {
         icon: <Palette className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
-        title: "Concept & Moodboard",
+        title: "Concept & moodboard development",
         description: "A visual direction is created to reflect the mood, colours, and materials that resonate with you."
     },
     {
         icon: <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
-        title: "Design Discussions",
+        title: "Design discussions & refinements",
         description: "We refine the design through discussions to ensure it aligns perfectly with your vision."
     },
     {
@@ -38,12 +38,12 @@ const steps = [
     },
     {
         icon: <Layers className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
-        title: "Material Finalisation",
+        title: "Material & finish finalisation",
         description: "Materials and finishes are selected to enhance warmth, harmony, and everyday living."
     },
     {
         icon: <FileOutput className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
-        title: "Execution Drawings",
+        title: "Execution & production drawings",
         description: "Detailed drawings are prepared to ensure accurate and seamless on-site execution."
     }
 ]

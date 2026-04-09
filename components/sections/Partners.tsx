@@ -16,12 +16,12 @@ const partners = [
 
 export const Partners = () => {
     return (
-        <section className="py-12 lg:py-20 bg-background overflow-hidden flex flex-col md:flex-row items-center gap-8 lg:gap-4 mx-auto px-6 md:px-12">
+        <section className="py-12 lg:py-20 bg-background overflow-hidden flex flex-col md:flex-row items-center gap-10 lg:gap-12 mx-auto px-6 md:px-12">
             {/* Left Static Text */}
             <div className="w-full md:w-auto shrink-0">
                 <Reveal width="100%">
                     <p className="font-sans font-medium text-[14px] leading-[21px] text-[#918f8b]">
-                        Brands We've Helped <br className="hidden md:block" /> Grow On Social.
+                        Brands We've  <br className="hidden md:block" /> Partnered with.
                     </p>
                 </Reveal>
             </div>
@@ -32,7 +32,7 @@ export const Partners = () => {
                 <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 
                 <motion.div
-                    className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16 whitespace-nowrap"
+                    className="flex items-center gap-8 md:gap-16 pl-36 md:pl-44 pr-8 md:pr-16 whitespace-nowrap"
                     animate={{ x: "-50%" }}
                     transition={{
                         x: {

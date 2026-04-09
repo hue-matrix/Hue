@@ -73,9 +73,9 @@ export const Process = () => {
                             <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5 mb-8">
                                 Process
                             </div>
+
                             <h2 className="text-5xl xl:text-[56px] font-sans font-bold tracking-tighter text-[#1a1a1a] leading-[1.1] max-w-lg">
-                                We Like To Keep Things <br />
-                                <span className="font-serif italic font-normal text-black/70 mt-2 block">Nice</span> And Simple.
+                               An Experience Built Around <span className="font-serif italic font-normal text-black/70"> You.</span> 
                             </h2>
                         </div>
 
@@ -124,7 +124,7 @@ export const Process = () => {
                                             </div>
                                             <div>
                                                 <div className="text-[11px] font-bold tracking-widest text-black/50 group-hover:text-black/70 mb-2 transition-colors">
-                                                    Step — 0{index + 1}
+                                                    Step 0{index + 1}
                                                 </div>
                                                 <h3 className="text-xl font-bold font-sans tracking-tight text-[#1a1a1a] mb-2">{step.title}</h3>
                                                 <p className="text-[15px] text-[#1a1a1a]/70 group-hover:text-[#1a1a1a]/80 leading-relaxed transition-colors">
@@ -185,7 +185,7 @@ const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: num
                 
                 <div className="flex flex-col gap-1.5 relative z-10 box-border">
                     <div className="text-[11px] font-bold tracking-widest text-black/50">
-                        Step — 0{index + 1}
+                        Step 0{index + 1}
                     </div>
                     <motion.h3 
                         className="text-[22px] font-bold font-sans tracking-tight"

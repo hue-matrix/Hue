@@ -48,12 +48,13 @@ export const WhyUs = () => {
                 </div>
             </div>
 
+
             {/* Main Headline */}
             <div className="text-center mb-20 px-4">
                 <Reveal width="100%">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter text-foreground">
-                        Why Choose Hue Matrix Over <br className="hidden md:block" />
-                        <span className="font-serif italic font-normal">Everyone Else?</span>
+                       What Makes Hue Matrix 
+                        <span className="font-serif italic font-normal"> Different.</span>
                     </h2>
                 </Reveal>
             </div>
@@ -69,7 +70,7 @@ export const WhyUs = () => {
                     {pillars.map((pillar, index) => (
                         <Reveal width="100%" delay={index * 0.1} key={index}>
                             <motion.div
-                                className="flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] bg-[#efebe5] hover:bg-[#f7f2ea] transition-all duration-500 h-full border border-black/5 hover:border-black/10 hover:shadow-xl hover:shadow-black/5"
+                                className="flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] bg-[#efebe5] hover:bg-[#f7f2ea] transition-all duration-500 h-full min-h-[26rem] md:min-h-[28rem] border border-black/5 hover:border-black/10 hover:shadow-xl hover:shadow-black/5"
                                 whileHover={{ y: -10 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 data-cursor="hover"

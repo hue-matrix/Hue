@@ -5,9 +5,9 @@ import { Reveal } from "@/components/ui/reveal"
 export const AboutSection = () => {
     return (
         <section className="py-24 px-4 md:px-6 max-w-7xl mx-auto" id="about">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 <Reveal width="100%">
-                    <div className="relative aspect-[3/4] md:aspect-square rounded-3xl overflow-hidden bg-foreground/5">
+                    <div className="relative max-h-[5060px] rounded-3xl overflow-hidden bg-foreground/5">
                         <img
                             src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?q=80&w=2000&auto=format&fit=crop"
                             alt="Gauri Badoni, Founder"

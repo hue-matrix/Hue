@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Magnetic } from "@/components/ui/Magnetic"
 import {
     ChefHat, Shirt, BookOpen, Tv, Bath, Wine, Flame, DoorOpen,
-    Briefcase, Armchair, Archive, Sofa, Utensils, Bed, Layers, Home, Coffee
+    Briefcase, Armchair, Archive, Sofa, Utensils, Bed, Layers, Home, Coffee, DoorClosed
 } from "lucide-react"
 import { CTA } from "@/components/sections/CTA"
 
@@ -39,6 +39,7 @@ const categories = [
             { label: "Sofas", icon: Sofa },
             { label: "Dining", icon: Utensils },
             { label: "Beds", icon: Bed },
+            { label: "Doors", icon: DoorClosed },
             { label: "Bar units", icon: Wine },
             { label: "Bathroom vanities", icon: Bath },
             { label: "Furnishing", icon: Layers },

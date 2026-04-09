@@ -17,8 +17,7 @@ export const About = () => {
                     <div className="relative">
                         <Reveal width="100%">
                             <h2 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full">
-                                Who We Are
-                            </h2>
+                            Meet the Founder </h2>
                         </Reveal>
                     </div>
 
@@ -34,18 +33,18 @@ export const About = () => {
                         <div className="flex flex-col gap-8 text-lg font-sans leading-relaxed text-foreground/80">
                             <Reveal>
                                 <p>
-                                    Hue Matrix was born from a childhood love for beautiful spaces. As a little girl, Gauri was always drawn to design, colours, and the small details that make a place feel special.
-                                </p>
+                                    Hue Matrix was born from a childhood love for beautiful spaces. As a little girl, Gauri was always drawn to design, colours, and the small details that make a place feel special. She loved collecting home decor, imagining how spaces could look and feel, never knowing that one day this instinct would shape her life’s work. That same care and attention can still be seen today in the way she designs, with patience, warmth, and a deep respect for every detail.                                </p>
                             </Reveal>
                             <Reveal>
                                 <p>
-                                    That same care and attention can still be seen today in the way she designs, with patience, warmth, and a deep respect for every detail. At its heart, Hue Matrix is guided by a simple philosophy. Design should feel thoughtful, functional, and natural to live in.
-                                </p>
+                                   At its heart, Hue Matrix is guided by a simple philosophy. Design should feel thoughtful, functional, and natural to live in. Every space is carefully planned, focusing on balance, proportion, and everyday usability rather than fleeting trends. Sustainability and material honesty are considered from the very beginning, shaping how each project is designed and built.                            </p>
                             </Reveal>
                             <Reveal delay={0.1}>
                                 <p>
-                                    Hue Matrix was created to change the industry gap regarding timelines and responsible building. The studio stands for clear timelines, quality craftsmanship, and transparent execution.
-                                </p>
+                                    After years of working closely with design companies, Gauri noticed a recurring gap in the industry. Timelines that were promised often stretched far beyond what was committed, and responsible building rarely found a place in the conversation. Hue Matrix was created to change that. The studio stands for clear timelines, quality craftsmanship, and transparent execution.                                </p>
+                            </Reveal>
+                             <Reveal>
+                                <p>From concept to completion, every project is handled with care. Budgets are respected, details are thoughtfully planned, and execution reflects exactly what is promised. The result is spaces that feel personal, well-made, and easy to belong in.                       </p>
                             </Reveal>
                         </div>
 

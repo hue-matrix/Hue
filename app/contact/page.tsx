@@ -122,7 +122,7 @@ export default function ContactPage() {
                             </div>
                             <div className="space-y-1">
                                 <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Location</p>
-                                <p className="text-lg font-medium text-black">Mumbai, India</p>
+                                <p className="text-lg font-medium text-black">New Delhi, India</p>
                             </div>
                         </div>
                     </motion.div>

@@ -28,14 +28,13 @@ export const Navbar = () => {
                     }`}
             >
                 <div className="w-full max-w-[1100px] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 py-4 md:py-6 flex justify-between items-center">
-                    <a href="/" className="text-2xl font-bold tracking-tighter font-serif flex items-center gap-2 relative z-50" data-cursor="hover">
-                        {/* Logo Icon */}
-                        <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
-                            </svg>
-                        </div>
-                        <span className="font-sans font-bold text-xl">Hue Matrix</span>
+                    <a href="/" className="flex items-center gap-2 relative z-50" data-cursor="hover">
+                        {/* Logo Image */}
+                        <img 
+                            src="/assets/Hue Matrix Logo.webp" 
+                            alt="Hue Matrix" 
+                            className="w-16 h-12 md:w-32 md:h-20 object-contain pt-4"
+                        />
                     </a>
 
                     {/* Desktop Menu */}

@@ -13,12 +13,11 @@ export const Footer = () => {
                     <div className="flex flex-col gap-6 max-w-sm">
                         {/* Logo */}
                         <a href="/" className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
-                                </svg>
-                            </div>
-                            <span className="font-sans font-bold text-xl tracking-tight">Hue Matrix</span>
+                            <img 
+                                src="/assets/Hue Matrix Logo.webp" 
+                                alt="Hue Matrix" 
+                                className="w-16 h-12 md:w-32 md:h-20 object-contain"
+                            />
                         </a>
 
                         {/* Tagline */}
@@ -60,7 +59,7 @@ export const Footer = () => {
                             <a href="https://calendar.app.google/VmXpNXuknU7sDKgW8" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">Book a call</a>
                             <a href="https://www.instagram.com/hue_matrix/" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">Instagram</a>
                             <a href="https://www.linkedin.com/in/gauri-badoni-25380971/" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">LinkedIn</a>
-                            <a href="mailto:design@huematrix.in" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">Email</a>
+                            <a href="mailto:hello@huematrix.in" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">Email</a>
                             <a href="tel:+918800934652" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors font-medium">Phone</a>
                         </div>
 

@@ -107,7 +107,23 @@ export default function ContactPage() {
                                 Ready to bring your vision to life? Get in touch and let’s discuss how we can transform your space into something truly personal and peace-filled.
                             </p>
                         </div>
-
+                        {/* Contact Information */}
+                        <div className="space-y-6 pt-8">
+                            <div className="space-y-1">
+                                <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Email</p>
+                                <a href="mailto:hello@huematrix.in" className="text-lg font-medium text-black hover:text-black/70 transition-colors">
+                                    hello@huematrix.in
+                                </a>
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Phone</p>
+                                <p className="text-lg font-medium text-black">+91 88009 34652</p>
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Location</p>
+                                <p className="text-lg font-medium text-black">Mumbai, India</p>
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Right Column: Interactive Form */}

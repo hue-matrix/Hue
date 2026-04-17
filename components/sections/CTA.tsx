@@ -47,8 +47,8 @@ export const CTA = () => {
                 >
 
                     <Image
-                        src="/assets/cta/mockup.png"
-                        alt="Phone Mockup"
+                        src="/assets/cta/cta.png"
+                        alt="CTA Banner"
                         fill
                         className="object-cover drop-shadow-2xl"
                         priority

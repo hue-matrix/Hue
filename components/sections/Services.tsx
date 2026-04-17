@@ -10,31 +10,31 @@ const services = [
     {
         image: "/assets/icons/service1.png",
         icon: <Home className="w-8 h-8 md:w-10 md:h-10 text-foreground" strokeWidth={1.5} />,
-        title: "2BHK, 3BHK, 4BHK & luxury home interiors",
+        title: "2BHK, 3BHK, 4BHK & Luxury Home Interiors",
         description: "We design homes that feel personal and easy to live in. Every layout is planned around daily routines, comfort, and flow, with careful attention to detail, materials, and long-term usability."
     },
     {
         image: "/assets/icons/service2.png",
         icon: <Palmtree className="w-8 h-8 md:w-10 md:h-10 text-foreground" strokeWidth={1.5} />,
-        title: "Villas and holiday homes",
+        title: "Villas & Holiday Homes",
         description: "Spaces designed to slow you down. We create relaxed, thoughtful interiors that balance comfort, openness, and detail while creating an environment that feels natural and easy to retreat into."
     },
     {
         image: "/assets/icons/service3.png",
         icon: <BedDouble className="w-8 h-8 md:w-10 md:h-10 text-foreground" strokeWidth={1.5} />,
-        title: "Resorts & boutique hotels",
+        title: "Resorts & Boutique Hotels",
         description: "We design interiors that feel warm, inviting, and comfortable. Attention to flow, atmosphere, and materials ensures spaces that are functional, durable, and effortless to experience for both guests and operators."
     },
     {
         image: "/assets/icons/service4.png",
         icon: <Key className="w-8 h-8 md:w-10 md:h-10 text-foreground" strokeWidth={1.5} />,
-        title: "Airbnb setups",
+        title: "Airbnb Setups",
         description: "We design interiors that are practical and welcoming. Every space is planned to look good, function smoothly, stay within a budget, and stand up to regular use, while still feeling warm and considered for every guest who walks in."
     },
     {
         image: "/assets/icons/service5.png",
         icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-foreground" strokeWidth={1.5} />,
-        title: "Offices & commercial interiors",
+        title: "Offices & Commercial Interiors",
         description: "Workspaces designed for clarity and comfort. We focus on layouts that support productivity, movement, and everyday use, while maintaining a clean, organised, and professional design language."
     }
 ]
@@ -107,12 +107,15 @@ export const Services = () => {
                     What We Do
                 </div>
             </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-foreground mb-10">
+                 
+            </h2>
 
             {/* Main Headline */}
             <div className="text-center mb-24 px-4">
                 <Reveal width="100%">
                     <h2 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tighter text-foreground leading-[1.1]">
-                        How We Can <br className="md:hidden" /> Help You <span className="font-serif italic font-normal">Grow.</span>
+                        Thoughtful <br className="md:hidden" /><span className="font-serif italic font-normal">Designs</span>  for Every Space .
                     </h2>
                 </Reveal>
                 <div className="text-center mt-10">

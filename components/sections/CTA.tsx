@@ -22,11 +22,11 @@ export const CTA = () => {
 
                     {/* Text Area */}
                     <div className="space-y-4 max-w-md">
-                        <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.05]">
-                            Your journey <br /> <span className="font-serif italic font-normal">starts right here.</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-[45x] font-bold tracking-tight leading-[1.05]">
+                            Your Design Journey <br /> Starts <span className="font-serif italic font-normal">Here.</span>
                         </h2>
                         <p className="text-base md:text-lg text-black/40 font-medium px-4">
-                            Ready to turn your vision into reality? Let's build something extraordinary together.
+                             Ready to turn your vision into reality? Let's create something truly uplifting. 
                         </p>
                     </div>
 

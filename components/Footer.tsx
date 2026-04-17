@@ -20,14 +20,13 @@ export const Footer = () => {
                             />
                         </a>
 
+
                         {/* Tagline */}
                         <h2 className="text-3xl md:text-4xl font-sans font-bold tracking-tight leading-tight">
-                            Design that drives <br /> <span className="font-serif italic font-normal">real emotion.</span>
+                            Creating Spaces You <br /> <span className="font-serif italic font-normal">Truly Belong In.</span>
                         </h2>
 
-                        <p className="text-black/60 font-medium">
-                            Built for homes, workspaces, and brands.
-                        </p>
+                    
 
                         {/* Social Buttons */}
                         <div className="flex gap-3 mt-4">

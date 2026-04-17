@@ -56,16 +56,17 @@ export const FAQ = () => {
                     <div className="flex justify-between items-start mb-8">
                         {/* Badge */}
                         <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
-                            Questions
+                            FAQs
                         </div>
                     </div>
+ 
 
                     {/* Heading - Left Aligned */}
                     <div className="text-left mb-8">
                         <Reveal width="100%">
                             <div className="flex flex-col items-start gap-4">
                                 <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground font-sans font-bold tracking-tight leading-[1.1]">
-                                    Frequently <br /> Asked <span className="font-serif italic font-normal">Questions</span>
+                                    Everything You Need to <span className="font-serif italic font-normal">Know</span>
                                 </h2>
                             </div>
                         </Reveal>

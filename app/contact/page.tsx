@@ -8,17 +8,18 @@ import { useState } from "react"
 import emailjs from "@emailjs/browser"
 
 const services = [
-    "Design Only",
+    "Design ",
+    "Design + Execution",
     "Execution",
-    "Styling & Decor",
-    "End-to-End Solution"
+    "Decoration"
 ]
 
 const projectTypes = [
-    "Residential",
-    "Villa/Holiday Home",
-    "Commercial/Office",
-    "Hospitality"
+    "Apartment",
+    "Villa",
+    "Commercial Space",
+    "Cafe / Restaurant",
+    "Other"
 ]
 
 export default function ContactPage() {

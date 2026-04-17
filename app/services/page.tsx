@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Magnetic } from "@/components/ui/Magnetic"
 import {
     ChefHat, Shirt, BookOpen, Tv, Bath, Wine, Flame, DoorOpen,
-    Briefcase, Armchair, Archive, Sofa, Utensils, Bed, Layers, Home, Coffee
+    Briefcase, Armchair, Archive, Sofa, Utensils, Bed, Layers, Home, Coffee, DoorClosed
 } from "lucide-react"
 import { CTA } from "@/components/sections/CTA"
 
@@ -39,6 +39,7 @@ const categories = [
             { label: "Sofas", icon: Sofa },
             { label: "Dining", icon: Utensils },
             { label: "Beds", icon: Bed },
+            { label: "Doors", icon: DoorClosed },
             { label: "Bar units", icon: Wine },
             { label: "Bathroom vanities", icon: Bath },
             { label: "Furnishing", icon: Layers },
@@ -61,8 +62,8 @@ export default function ServicesPage() {
                     </div>
                     <div className="relative w-full">
                         <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full mb-6">
-                            Interior Design Solutions Under One Roof
-                        </h1>
+Complete Interior Design Solutions Under One Roof
+                            </h1>
                     </div>
                     <p className="font-sans font-medium text-[16px] md:text-[18px] leading-[36px] text-[#918f8b] max-w-2xl">
                         From ideation to execution, we offer functional design solutions for your space, from essentials to complete custom builds.

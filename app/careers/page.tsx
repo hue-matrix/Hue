@@ -3,11 +3,94 @@
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Upload } from "lucide-react"
-import { useState } from "react"
+import { ArrowUpRight, Upload, CheckCircle, AlertCircle } from "lucide-react"
+import { useState, useEffect } from "react"
 import { CTA } from "@/components/sections/CTA"
+import emailjs from "@emailjs/browser"
+
+// Initialize EmailJS
+if (typeof window !== "undefined") {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "")
+}
 
 export default function CareersPage() {
+    const [careersLoading, setCareersLoading] = useState(false)
+    const [vendorsLoading, setVendorsLoading] = useState(false)
+    const [careersMessage, setCareersMessage] = useState<{ type: "success" | "error", text: string } | null>(null)
+    const [vendorsMessage, setVendorsMessage] = useState<{ type: "success" | "error", text: string } | null>(null)
+    const [resumeFile, setResumeFile] = useState<File | null>(null)
+
+    const handleCareersSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setCareersLoading(true)
+        setCareersMessage(null)
+
+        try {
+            const formData = new FormData(e.currentTarget)
+            const templateParams = {
+                from_name: formData.get("fullName"),
+                from_email: formData.get("email"),
+                phone: formData.get("phone"),
+                location: formData.get("location"),
+                role: formData.get("role"),
+                experience: formData.get("experience"),
+                portfolio: formData.get("portfolio"),
+                form_type: "Careers",
+                to_email: process.env.NEXT_PUBLIC_CAREERS_EMAIL || "careers@huematrix.in",
+            }
+
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_CAREERS_TEMPLATE_ID || "",
+                templateParams
+            )
+
+            setCareersMessage({ type: "success", text: "Application submitted successfully! We'll get back to you soon." })
+            e.currentTarget.reset()
+            setResumeFile(null)
+        } catch (error) {
+            setCareersMessage({ type: "error", text: "Failed to submit application. Please try again." })
+            console.error("EmailJS Error:", error)
+        } finally {
+            setCareersLoading(false)
+        }
+    }
+
+    const handleVendorsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setVendorsLoading(true)
+        setVendorsMessage(null)
+
+        try {
+            const formData = new FormData(e.currentTarget)
+            const templateParams = {
+                company_name: formData.get("companyName"),
+                contact_person: formData.get("contactPerson"),
+                from_email: formData.get("vendorEmail"),
+                phone: formData.get("vendorPhone"),
+                location: formData.get("vendorLocation"),
+                service_type: formData.get("serviceType"),
+                portfolio: formData.get("vendorPortfolio"),
+                form_type: "Partnership",
+                to_email: process.env.NEXT_PUBLIC_VENDORS_EMAIL || "partnerships@huematrix.in",
+            }
+
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_VENDORS_TEMPLATE_ID || "",
+                templateParams
+            )
+
+            setVendorsMessage({ type: "success", text: "Partnership details submitted successfully! We'll contact you soon." })
+            e.currentTarget.reset()
+        } catch (error) {
+            setVendorsMessage({ type: "error", text: "Failed to submit details. Please try again." })
+            console.error("EmailJS Error:", error)
+        } finally {
+            setVendorsLoading(false)
+        }
+    }
+
     return (
         <main className="min-h-screen bg-[#efebe5] text-black selection:bg-black selection:text-white">
             <Navbar />
@@ -34,7 +117,7 @@ export default function CareersPage() {
 
                     {/* Careers Form */}
                     <FormContainer title="Join Our Team" delay={0}>
-                        <form className="space-y-6 flex flex-col h-full">
+                        <form onSubmit={handleCareersSubmit} className="space-y-6 flex flex-col h-full">
                             <div className="space-y-6 flex-grow">
                                 <FormInput label="Full Name*" name="fullName" type="text" placeholder="Full Name*" required />
                                 <FormInput label="Email Address*" name="email" type="email" placeholder="Email Address*" required />
@@ -48,16 +131,35 @@ export default function CareersPage() {
                                     <label className="sr-only">Upload Resume</label>
                                     <div className="border border-dashed border-black/20 rounded-xl p-4 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors group">
                                         <Upload size={20} className="text-black/40 group-hover:text-black transition-colors" />
-                                        <span className="text-sm text-black/60">Upload Resume</span>
-                                        <input type="file" className="hidden" accept=".pdf,.doc,.docx" />
+                                        <span className="text-sm text-black/60">{resumeFile ? resumeFile.name : "Upload Resume"}</span>
+                                        <input type="file" className="hidden" accept=".pdf,.doc,.docx" onChange={(e) => setResumeFile(e.target.files?.[0] || null)} />
                                     </div>
                                 </div>
 
                                 <FormInput label="Portfolio Link" name="portfolio" type="url" placeholder="Portfolio Link" />
                             </div>
 
+                            {careersMessage && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className={`p-3 rounded-lg flex items-center gap-2 text-sm ${
+                                        careersMessage.type === "success"
+                                            ? "bg-green-50 text-green-700"
+                                            : "bg-red-50 text-red-700"
+                                    }`}
+                                >
+                                    {careersMessage.type === "success" ? (
+                                        <CheckCircle size={18} />
+                                    ) : (
+                                        <AlertCircle size={18} />
+                                    )}
+                                    {careersMessage.text}
+                                </motion.div>
+                            )}
+
                             <div className="mt-6">
-                                <SubmitButton label="Submit Application" />
+                                <SubmitButton label="Submit Application" loading={careersLoading} />
                             </div>
                         </form>
                     </FormContainer>
@@ -65,7 +167,7 @@ export default function CareersPage() {
                     {/* Vendors Form */}
                     <FormContainer title="Partner With Us" delay={0.2}>
                         <div className="h-full flex flex-col">
-                            <form className="space-y-6 flex flex-col h-full">
+                            <form onSubmit={handleVendorsSubmit} className="space-y-6 flex flex-col h-full">
                                 <div className="space-y-6 flex-grow">
                                     <FormInput label="Company / Individual Name*" name="companyName" type="text" placeholder="Company / Individual Name*" required />
                                     <FormInput label="Contact Person Name*" name="contactPerson" type="text" placeholder="Contact Person Name*" required />
@@ -76,8 +178,27 @@ export default function CareersPage() {
                                     <FormInput label="Previous Work / Website / Portfolio Link" name="vendorPortfolio" type="url" placeholder="Previous Work / Website / Portfolio Link" />
                                 </div>
 
+                                {vendorsMessage && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className={`p-3 rounded-lg flex items-center gap-2 text-sm ${
+                                            vendorsMessage.type === "success"
+                                                ? "bg-green-50 text-green-700"
+                                                : "bg-red-50 text-red-700"
+                                        }`}
+                                    >
+                                        {vendorsMessage.type === "success" ? (
+                                            <CheckCircle size={18} />
+                                        ) : (
+                                            <AlertCircle size={18} />
+                                        )}
+                                        {vendorsMessage.text}
+                                    </motion.div>
+                                )}
+
                                 <div className="mt-6">
-                                    <SubmitButton label="Submit Details" />
+                                    <SubmitButton label="Submit Details" loading={vendorsLoading} />
                                 </div>
                             </form>
                         </div>
@@ -149,9 +270,9 @@ const FormInput = ({
     </div>
 )
 
-const SubmitButton = ({ label }: { label: string }) => (
-    <button type="submit" className="group w-full bg-black text-white px-8 py-5 rounded-full flex items-center justify-between hover:scale-[1.02] transition-transform duration-300" data-cursor="hover">
-        <span className="text-lg font-medium">{label}</span>
+const SubmitButton = ({ label, loading }: { label: string, loading?: boolean }) => (
+    <button type="submit" disabled={loading} className="group w-full bg-black text-white px-8 py-5 rounded-full flex items-center justify-between hover:scale-[1.02] transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed" data-cursor="hover">
+        <span className="text-lg font-medium">{loading ? "Submitting..." : label}</span>
         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black group-hover:rotate-45 transition-transform duration-300">
             <ArrowUpRight size={18} />
         </div>

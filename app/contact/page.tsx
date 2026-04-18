@@ -112,9 +112,7 @@ export default function ContactPage() {
                         <div className="space-y-6 pt-8">
                             <div className="space-y-1">
                                 <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Email</p>
-                                <a href="mailto:hello@huematrix.in" className="text-lg font-medium text-black hover:text-black/70 transition-colors">
-                                    hello@huematrix.in
-                                </a>
+                                <p className="text-lg font-medium text-black">hello@huematrix.in</p>
                             </div>
                             <div className="space-y-1">
                                 <p className="text-sm font-medium text-black/60 uppercase tracking-wide">Phone</p>

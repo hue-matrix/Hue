@@ -33,7 +33,7 @@ export const Navbar = () => {
                         <img 
                             src="/assets/Hue Matrix Logo.webp" 
                             alt="Hue Matrix" 
-                            className="w-16 h-12 md:w-32 md:h-20 object-contain pt-4"
+                            className="w-16 h-12 md:w-32 object-contain pt-4"
                         />
                     </a>
 

@@ -10,13 +10,13 @@ export const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-8">
 
                     {/* Left Column: Branding */}
-                    <div className="flex flex-col gap-6 max-w-sm">
+                    <div className="flex flex-col gap-2 max-w-sm">
                         {/* Logo */}
-                        <a href="/" className="flex items-center gap-2">
+                        <a href="/" className="flex items-center">
                             <img 
                                 src="/assets/Hue Matrix Logo.webp" 
                                 alt="Hue Matrix" 
-                                className="w-16 h-12 md:w-32 md:h-20 object-contain"
+                                className="w-16 h-12 md:w-32 object-contain"
                             />
                         </a>
 

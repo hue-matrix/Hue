@@ -2,47 +2,47 @@
 
 import { Reveal } from "@/components/ui/reveal"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
-import { MapPin, Ruler, Palette, MessageCircle, Box, CheckCircle2, Layers, FileOutput } from "lucide-react"
+import Image from "next/image"
 import { useRef, useState } from "react"
 
 const steps = [
     {
-        icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon1.gif" alt="Site Visit" width={64} height={64} className="mix-blend-multiply" unoptimized />,
         title: "Site Visit & Client Brief",
         description: "We begin by understanding your space, lifestyle, and how you want the home to feel."
     },
     {
-        icon: <Ruler className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon2.gif" alt="Space Planning" width={100} height={100} className="mix-blend-multiply" unoptimized />,
         title: "2D Space Planning",
         description: "Layouts are planned to ensure comfort, balance, and smooth movement within the space."
     },
     {
-        icon: <Palette className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon3.gif" alt="Concept" width={100} height={100} className="mix-blend-multiply" unoptimized />,
         title: "Concept & moodboard development",
         description: "A visual direction is created to reflect the mood, colours, and materials that resonate with you."
     },
     {
-        icon: <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon4.gif" alt="Design discussions" width={80} height={80} className="mix-blend-multiply" unoptimized />,
         title: "Design discussions & refinements",
         description: "We refine the design through discussions to ensure it aligns perfectly with your vision."
     },
     {
-        icon: <Box className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon5.gif" alt="3D Visualisation" width={80} height={80} className="mix-blend-multiply" unoptimized />,
         title: "3D Visualisation",
         description: "Realistic views help you experience the space before execution begins."
     },
     {
-        icon: <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon6.gif" alt="Design Freeze" width={80} height={80} className="mix-blend-multiply" unoptimized />,
         title: "Design Freeze",
         description: "Once approved, the design is finalised to move confidently into execution."
     },
     {
-        icon: <Layers className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon7.gif" alt="Material finalisation" width={80} height={80} className="mix-blend-multiply" unoptimized />,
         title: "Material & finish finalisation",
         description: "Materials and finishes are selected to enhance warmth, harmony, and everyday living."
     },
     {
-        icon: <FileOutput className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />,
+        icon: <Image src="/assets/icons/processicon8.gif" alt="Execution" width={80} height={80} className="mix-blend-multiply" unoptimized />,
         title: "Execution & production drawings",
         description: "Detailed drawings are prepared to ensure accurate and seamless on-site execution."
     }
@@ -70,9 +70,9 @@ export const Process = () => {
 
                         {/* LEFT: Heading */}
                         <div className="w-[45%] flex flex-col justify-center items-start h-[100vh]">
-                            <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5 mb-8">
-                                Process
-                            </div>
+                 <div className="bg-[#e6e2dc] px-6 py-2 font-sans rounded-full font-medium tracking-wide text-[16px] text-[#918f8b] mb-4">
+                    Process
+                </div>
 
                             <h2 className="text-5xl xl:text-[56px] font-sans font-bold tracking-tighter text-[#1a1a1a] leading-[1.1] max-w-lg">
                                An Experience Built Around <span className="font-serif italic font-normal text-black/70"> You.</span> 
@@ -119,7 +119,7 @@ export const Process = () => {
                                 <Reveal key={index} delay={index * 0.05} y={30}>
                                     <div className="relative px-4 flex flex-col gap-2">
                                         <div className="bg-[#f7f3ed] rounded-3xl p-6 md:p-8 flex flex-col gap-5 border border-black/5 hover:bg-[#ffffff] transition-colors duration-500 group shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
-                                            <div className="w-14 h-14 rounded-full bg-[#1a1a1a] flex items-center justify-center text-white shrink-0 group-hover:bg-[#2a2a2a] transition-colors">
+                                            <div>
                                                 {step.icon}
                                             </div>
                                             <div>
@@ -174,13 +174,10 @@ const StepCard = ({ step, index, progress }: { step: typeof steps[0], index: num
                 style={{ opacity, scale, backgroundColor }}
                 className="flex items-start gap-6 p-8 lg:p-10 rounded-[2.5rem] relative overflow-hidden border border-black/5 w-full h-full shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
             >
-                <div className="shrink-0 pt-0.5">
-                    <motion.div
-                        style={{ backgroundColor: iconBgColor, color: iconTextColor }}
-                        className="w-14 h-14 rounded-full flex items-center justify-center"
-                    >
+                <div className="pt-0.5">
+                    <div>
                         {step.icon}
-                    </motion.div>
+                    </div>
                 </div>
                 
                 <div className="flex flex-col gap-1.5 relative z-10 box-border">

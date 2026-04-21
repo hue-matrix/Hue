@@ -12,7 +12,7 @@ export default function WorkPage() {
             <Navbar />
             <div className="pt-32 pb-20 w-full max-w-[1100px] mx-auto px-4 md:px-6">
                 <div className="flex flex-col items-start text-left space-y-4 mb-12">
-                    <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
+                    <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-[16px] font-medium tracking-wide text-[#918f8b] ">
                         Our Work
                     </div>
                     <div className="relative w-full">

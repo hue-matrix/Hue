@@ -16,13 +16,13 @@ export default function PrivacyPage() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="pt-32 pb-16 px-6 w-full max-w-[1100px] mx-auto"
+                className="pt-32 pb-12 px-6 w-full max-w-[900px] mx-auto"
             >
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+                <div className="flex flex-col gap-4 ">
                     <div className="flex flex-col gap-4">
-                        <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase w-fit">
-                            Legal
-                        </div>
+                        <div className="bg-[#e6e2dc] w-fit px-6 py-2 rounded-full text-[16px] font-medium tracking-wide text-[#918f8b] ">
+                        Legal
+                    </div>
                         <h1 className="text-6xl md:text-7xl lg:text-[64px] xl:text-[72px] font-sans font-medium tracking-tighter leading-[1.05] relative z-10 w-full">Privacy Policy</h1>
                     </div>
                     <p className="text-sm font-medium text-[#918f8b]">Last updated: April 2026</p>

@@ -55,9 +55,9 @@ export const FAQ = () => {
                     {/* Header Row: Badge + Dot */}
                     <div className="flex justify-between items-start mb-8">
                         {/* Badge */}
-                        <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
-                            FAQs
-                        </div>
+                        <div className="bg-[#e6e2dc] px-6 py-2 font-sans rounded-full font-medium tracking-wide text-[16px] text-[#918f8b]">
+                    FAQs
+                </div>
                     </div>
  
 

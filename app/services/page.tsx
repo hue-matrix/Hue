@@ -57,7 +57,7 @@ export default function ServicesPage() {
 
                 {/* Header */}
                 <div className="flex flex-col items-start text-left space-y-6 mb-12 relative z-10 max-w-4xl">
-                    <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
+                    <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-[16px] font-medium tracking-wide text-[#918f8b] ">
                         Our Services
                     </div>
                     <div className="relative w-full">

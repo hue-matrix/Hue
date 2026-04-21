@@ -103,7 +103,7 @@ export const Services = () => {
 
             {/* Top Badge */}
             <div className="flex justify-center mb-10">
-                <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
+                <div className="bg-[#e6e2dc] px-6 py-2 font-sans rounded-full font-medium tracking-wide text-[16px] text-[#918f8b]">
                     What We Do
                 </div>
             </div>

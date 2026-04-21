@@ -6,44 +6,57 @@ import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import { useRef, useState, MouseEvent } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { CTA } from "@/components/sections/CTA"
 
 const insights = [
     {
-        title: "Finishes",
+        title: "Finishes: Why Your Walls Do More Work Than You Think",
         excerpt: "Exploring textures and surfaces that define a room's character.",
         image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop",
-        color: "#d4cdc4"
+        color: "#d4cdc4",
+        slug: "finishes",
+        date: "Apr 15, 2026"
     },
     {
-        title: "Hardware",
+        title: "The Quiet Detail: Why Hardware Is the Last Thing People Notice and the First Thing They Feel",
         excerpt: "The subtle details that elevate functional design and bring spaces to life.",
         image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop",
-        color: "#c8c2b9"
+        color: "#c8c2b9",
+        slug: "hardware",
+        date: "Apr 22, 2026"
     },
     {
-        title: "Material",
+        title: "Choosing Materials That Last: A Practical Guide for Homes",
         excerpt: "A guide to choosing sustainable and honest materials for longevity.",
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
-        color: "#e2ded8"
+        color: "#e2ded8",
+        slug: "materials",
+        date: "May 3, 2026"
     },
     {
-        title: "Space Planning",
-        excerpt: "Sustainability & why it is important; Designing energy-based spaces.",
+        title: "The Plan Beneath the Design: Why Space Planning Decides Everything",
+        excerpt: "Why space planning matters and how to use it to create functional, comfortable homes.",
         image: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=1974&auto=format&fit=crop",
-        color: "#d9d4cc"
+        color: "#d9d4cc",
+        slug: "space-planning",
+        date: "May 10, 2026"
     },
     {
-        title: "Vaastu",
+        title: "Vaastu Without the Mythology: What the Ancient Science of Space Actually Teaches Us",
         excerpt: "Integrating traditional wisdom into modern, balanced layouts.",
         image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop",
-        color: "#cdc7be"
+        color: "#cdc7be",
+        slug: "vaastu",
+        date: "May 18, 2026"
     },
     {
-        title: "Themes",
+        title: "Design Themes Explained: How to Choose One That Actually Reflects You",
         excerpt: "Finding the visual language that resonates with your lifestyle.",
         image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-        color: "#ded9d3"
+        color: "#ded9d3",
+        slug: "design-themes",
+        date: "May 25, 2026"
     }
 ]
 
@@ -56,7 +69,7 @@ export default function InsightsPage() {
 
                 {/* Header */}
                 <div className="flex flex-col items-start text-left space-y-6 mb-12">
-                    <div className="bg-[#f7f2ea] px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
+                    <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-[16px] font-medium tracking-wide text-[#918f8b] ">
                         Insights
                     </div>
                     <div className="relative w-full">
@@ -86,49 +99,49 @@ export default function InsightsPage() {
     )
 }
 
-function InsightCard({ insight, index }: { insight: { title: string, excerpt: string, color: string, image: string }, index: number }) {
+function InsightCard({ insight, index }: { insight: { title: string, excerpt: string, color: string, image: string, slug: string, date?: string }, index: number }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.1 } }}
-            viewport={{ once: true, margin: "-10%" }}
-            className="group flex flex-col gap-6 w-full h-full"
-            data-cursor="hover"
-        >
-            {/* Image Card: Taller aspect ratio as requested */}
-            <div className="relative aspect-square w-full overflow-hidden rounded-[1.25rem] shrink-0 border border-black/5">
-                <Image
-                    src={insight.image}
-                    alt={insight.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-            </div>
-
-            {/* Content Card: Uniform height irrespective of content */}
-            <div className="bg-[#f7f2ea] rounded-[1.25rem] p-4 flex flex-col relative border border-black/5 w-full min-h-[100px]">
-                <div className="space-y-2">
-                    <h3 className="text-[20px] leading-[30px] font-sans font-medium text-black max-w-[90%]">
-                        {insight.title}
-                    </h3>
-                    <p className="text-[16px] leading-[24px] font-sans font-medium text-black/48 max-w-[85%] line-clamp-2">
-                        {insight.excerpt}
-                    </p>
+        <Link href={`/insights/${insight.slug}`}>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.1 } }}
+                viewport={{ once: true, margin: "-10%" }}
+                className="group flex flex-col gap-6 w-full h-full cursor-pointer"
+                data-cursor="hover"
+            >
+                {/* Image Card: Taller aspect ratio as requested */}
+                <div className="relative aspect-square w-full overflow-hidden rounded-[1.25rem] shrink-0 border border-black/5">
+                    <Image
+                        src={insight.image}
+                        alt={insight.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
                 </div>
 
-                {/* Micro-interaction Button: Positioned precisely */}
-                <div className="absolute right-6 md:right-8 bottom-6 md:bottom-8 w-9 h-9 bg-black text-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
-                    <motion.div
-                        initial={{ rotate: 0 }}
-                        whileHover={{ rotate: -45 }}
-                        className="flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45"
-                    >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </motion.div>
+                {/* Content Card: Uniform height irrespective of content */}
+                <div className="bg-[#f7f2ea] rounded-[1.25rem] p-6 flex flex-col relative border border-black/5 w-full min-h-[160px]">
+                        <h3 className="text-[20px] font-sans font-medium text-black line-clamp-2 mb-2">
+                            {insight.title}
+                        </h3>
+                        <p className="text-[16px] font-sans font-medium text-[#918f8b] line-clamp-3">
+                            {insight.excerpt}
+                        </p>
+
+                    {/* Micro-interaction Button: Positioned precisely */}
+                    <div className="absolute right-3 bottom-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shrink-0">
+                        <motion.div
+                            initial={{ rotate: 0 }}
+                            whileHover={{ rotate: -45 }}
+                            className="flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </motion.div>
+                    </div>
                 </div>
-            </div>
-        </motion.div>
+            </motion.div>
+        </Link>
     )
 }

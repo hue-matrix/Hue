@@ -94,9 +94,9 @@ export default function ContactPage() {
                     >
                         {/* Badge */}
                         <div className="w-fit">
-                            <div className="bg-black/5 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide text-black/80 uppercase">
-                                Book a call
-                            </div>
+                        <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-[16px] font-medium tracking-wide text-[#918f8b] ">
+                        Book A Call
+                    </div>
                         </div>
 
                         {/* Headline */}

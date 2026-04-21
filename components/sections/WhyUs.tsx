@@ -8,32 +8,32 @@ const pillars = [
     {
         title: "Honest Timelines, Delivered as Promised",
         description: "We believe timelines should be honest and achievable. Every project is planned carefully and delivered when it is promised, without unnecessary extensions.",
-        icon: <Image src="/assets/icons/icon1.gif" alt="Timelines" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon1.gif" alt="Timelines" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Focused and Personalised Attention",
         description: "Every space receives focused attention. From design to execution, each project is handled with care, ensuring details are thoughtfully planned and well executed.",
-        icon: <Image src="/assets/icons/icon2.gif" alt="Attention" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon2.gif" alt="Attention" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Flexible, Modular Services",
         description: "You are free to choose only what you need. Whether it is design support, execution, or styling and décor for an existing space, we offer individual services as well as complete solutions.",
-        icon: <Image src="/assets/icons/icon3.gif" alt="Services" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon3.gif" alt="Services" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Budget-Conscious Approach",
         description: "Good design should be accessible. We offer flexible and cost-effective options, ensuring quality and clarity even when working within a defined budget.",
-        icon: <Image src="/assets/icons/icon4.gif" alt="Budget" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon4.gif" alt="Budget" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "Sustainability as a Core Value",
         description: "Environmental responsibility is woven into every decision, guiding both design choices and execution methods.",
-        icon: <Image src="/assets/icons/icon5.gif" alt="Sustainability" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon5.gif" alt="Sustainability" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     },
     {
         title: "NRI-Friendly Process",
         description: "If you cannot be present on site, we manage everything for you. Regular updates, clear communication, and remote coordination ensure peace of mind throughout.",
-        icon: <Image src="/assets/icons/icon6.gif" alt="NRI Friendly" width={64} height={64} className="mb-6 mix-blend-multiply" unoptimized />
+        icon: <Image src="/assets/icons/icon6.gif" alt="NRI Friendly" width={80} height={80} className="mb-6 mix-blend-multiply" unoptimized />
     }
 ]
 
@@ -43,7 +43,7 @@ export const WhyUs = () => {
 
             {/* Top Badge */}
             <div className="flex justify-center mb-8">
-                <div className="bg-[#e6e2dc] px-6 py-2 rounded-full text-sm font-medium tracking-wide text-black/80 border border-black/5">
+            <div className="bg-[#e6e2dc] px-6 py-2 font-sans rounded-full font-medium tracking-wide text-[16px] text-[#918f8b]">
                     Why Us
                 </div>
             </div>
